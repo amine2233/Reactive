@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 		s.name 				= "Reactive"
-		s.version 			= "0.0.1"
+		s.version 			= "1.0.0"
 		s.summary         	= "Sort description of 'Reactive' framework"
 	    s.homepage        	= "https://github.com/amine2233/Reactive"
 	    s.license           = { type: 'MIT', file: 'LICENSE' }
