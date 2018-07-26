@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		672B85CC2109983900790E50 /* BindableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672B85CB2109983900790E50 /* BindableProtocol.swift */; };
+		672B85CD2109983900790E50 /* BindableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672B85CB2109983900790E50 /* BindableProtocol.swift */; };
+		672B85CE2109983900790E50 /* BindableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672B85CB2109983900790E50 /* BindableProtocol.swift */; };
+		672B85CF2109983900790E50 /* BindableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672B85CB2109983900790E50 /* BindableProtocol.swift */; };
+		672B85D12109A07F00790E50 /* ExecutionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672B85D02109A07F00790E50 /* ExecutionContext.swift */; };
+		672B85D22109A07F00790E50 /* ExecutionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672B85D02109A07F00790E50 /* ExecutionContext.swift */; };
+		672B85D32109A07F00790E50 /* ExecutionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672B85D02109A07F00790E50 /* ExecutionContext.swift */; };
+		672B85D42109A07F00790E50 /* ExecutionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672B85D02109A07F00790E50 /* ExecutionContext.swift */; };
 		6777F21521079F09005069F3 /* Reactive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6777F20B21079F09005069F3 /* Reactive.framework */; };
 		6777F23E21079F2E005069F3 /* Reactive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6777F23521079F2D005069F3 /* Reactive.framework */; };
 		6777F25A21079F43005069F3 /* Reactive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6777F25121079F43005069F3 /* Reactive.framework */; };
@@ -37,14 +45,10 @@
 		6777F2902107A926005069F3 /* SubjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F28E2107A926005069F3 /* SubjectProtocol.swift */; };
 		6777F2912107A926005069F3 /* SubjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F28E2107A926005069F3 /* SubjectProtocol.swift */; };
 		6777F2922107A926005069F3 /* SubjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F28E2107A926005069F3 /* SubjectProtocol.swift */; };
-		6777F2942107A95F005069F3 /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F2932107A95F005069F3 /* Thread.swift */; };
-		6777F2952107A95F005069F3 /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F2932107A95F005069F3 /* Thread.swift */; };
-		6777F2962107A95F005069F3 /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F2932107A95F005069F3 /* Thread.swift */; };
-		6777F2972107A95F005069F3 /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F2932107A95F005069F3 /* Thread.swift */; };
-		6777F2992107A9CC005069F3 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F2982107A9CC005069F3 /* Queue.swift */; };
-		6777F29A2107A9CC005069F3 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F2982107A9CC005069F3 /* Queue.swift */; };
-		6777F29B2107A9CC005069F3 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F2982107A9CC005069F3 /* Queue.swift */; };
-		6777F29C2107A9CC005069F3 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F2982107A9CC005069F3 /* Queue.swift */; };
+		6777F2942107A95F005069F3 /* Threading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F2932107A95F005069F3 /* Threading.swift */; };
+		6777F2952107A95F005069F3 /* Threading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F2932107A95F005069F3 /* Threading.swift */; };
+		6777F2962107A95F005069F3 /* Threading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F2932107A95F005069F3 /* Threading.swift */; };
+		6777F2972107A95F005069F3 /* Threading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F2932107A95F005069F3 /* Threading.swift */; };
 		6777F29E2107AC5B005069F3 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F29D2107AC5B005069F3 /* Timer.swift */; };
 		6777F29F2107AC5B005069F3 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F29D2107AC5B005069F3 /* Timer.swift */; };
 		6777F2A02107AC5B005069F3 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F29D2107AC5B005069F3 /* Timer.swift */; };
@@ -80,6 +84,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		672B85CA2109954900790E50 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = SOURCE_ROOT; };
+		672B85CB2109983900790E50 /* BindableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableProtocol.swift; sourceTree = "<group>"; };
+		672B85D02109A07F00790E50 /* ExecutionContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecutionContext.swift; sourceTree = "<group>"; };
 		6777F20B21079F09005069F3 /* Reactive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Reactive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6777F21421079F09005069F3 /* ReactiveTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6777F22821079F1A005069F3 /* Reactive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Reactive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,8 +108,7 @@
 		6777F2842107A4F4005069F3 /* Lock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lock.swift; sourceTree = "<group>"; };
 		6777F2892107A90F005069F3 /* SignalProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalProtocol.swift; sourceTree = "<group>"; };
 		6777F28E2107A926005069F3 /* SubjectProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectProtocol.swift; sourceTree = "<group>"; };
-		6777F2932107A95F005069F3 /* Thread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
-		6777F2982107A9CC005069F3 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		6777F2932107A95F005069F3 /* Threading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Threading.swift; sourceTree = "<group>"; };
 		6777F29D2107AC5B005069F3 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		6777F2A22107ADCF005069F3 /* ObservableProtocolProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableProtocolProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -200,6 +206,7 @@
 		6777F26921079FBD005069F3 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				672B85CA2109954900790E50 /* README */,
 				6777F2712107A20D005069F3 /* Reactive.h */,
 				6777F26D2107A0A2005069F3 /* Info-iOS.plist */,
 				6777F26C2107A0A2005069F3 /* Info-macOS.plist */,
@@ -211,9 +218,10 @@
 				6777F2842107A4F4005069F3 /* Lock.swift */,
 				6777F2892107A90F005069F3 /* SignalProtocol.swift */,
 				6777F28E2107A926005069F3 /* SubjectProtocol.swift */,
-				6777F2932107A95F005069F3 /* Thread.swift */,
-				6777F2982107A9CC005069F3 /* Queue.swift */,
+				6777F2932107A95F005069F3 /* Threading.swift */,
 				6777F29D2107AC5B005069F3 /* Timer.swift */,
+				672B85CB2109983900790E50 /* BindableProtocol.swift */,
+				672B85D02109A07F00790E50 /* ExecutionContext.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -503,12 +511,13 @@
 			files = (
 				6777F2802107A4AF005069F3 /* ObservableToken.swift in Sources */,
 				6777F2A32107ADCF005069F3 /* ObservableProtocolProvider.swift in Sources */,
-				6777F2992107A9CC005069F3 /* Queue.swift in Sources */,
-				6777F2942107A95F005069F3 /* Thread.swift in Sources */,
+				6777F2942107A95F005069F3 /* Threading.swift in Sources */,
 				6777F2852107A4F4005069F3 /* Lock.swift in Sources */,
 				6777F28F2107A926005069F3 /* SubjectProtocol.swift in Sources */,
 				6777F27B2107A428005069F3 /* ObservableProtocol.swift in Sources */,
+				672B85D12109A07F00790E50 /* ExecutionContext.swift in Sources */,
 				6777F28A2107A90F005069F3 /* SignalProtocol.swift in Sources */,
+				672B85CC2109983900790E50 /* BindableProtocol.swift in Sources */,
 				6777F29E2107AC5B005069F3 /* Timer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -527,12 +536,13 @@
 			files = (
 				6777F2812107A4AF005069F3 /* ObservableToken.swift in Sources */,
 				6777F2A42107ADCF005069F3 /* ObservableProtocolProvider.swift in Sources */,
-				6777F29A2107A9CC005069F3 /* Queue.swift in Sources */,
-				6777F2952107A95F005069F3 /* Thread.swift in Sources */,
+				6777F2952107A95F005069F3 /* Threading.swift in Sources */,
 				6777F2862107A4F4005069F3 /* Lock.swift in Sources */,
 				6777F2902107A926005069F3 /* SubjectProtocol.swift in Sources */,
 				6777F27C2107A428005069F3 /* ObservableProtocol.swift in Sources */,
+				672B85D22109A07F00790E50 /* ExecutionContext.swift in Sources */,
 				6777F28B2107A90F005069F3 /* SignalProtocol.swift in Sources */,
+				672B85CD2109983900790E50 /* BindableProtocol.swift in Sources */,
 				6777F29F2107AC5B005069F3 /* Timer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -543,12 +553,13 @@
 			files = (
 				6777F2822107A4AF005069F3 /* ObservableToken.swift in Sources */,
 				6777F2A52107ADCF005069F3 /* ObservableProtocolProvider.swift in Sources */,
-				6777F29B2107A9CC005069F3 /* Queue.swift in Sources */,
-				6777F2962107A95F005069F3 /* Thread.swift in Sources */,
+				6777F2962107A95F005069F3 /* Threading.swift in Sources */,
 				6777F2872107A4F4005069F3 /* Lock.swift in Sources */,
 				6777F2912107A926005069F3 /* SubjectProtocol.swift in Sources */,
 				6777F27D2107A428005069F3 /* ObservableProtocol.swift in Sources */,
+				672B85D32109A07F00790E50 /* ExecutionContext.swift in Sources */,
 				6777F28C2107A90F005069F3 /* SignalProtocol.swift in Sources */,
+				672B85CE2109983900790E50 /* BindableProtocol.swift in Sources */,
 				6777F2A02107AC5B005069F3 /* Timer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -567,12 +578,13 @@
 			files = (
 				6777F2832107A4AF005069F3 /* ObservableToken.swift in Sources */,
 				6777F2A62107ADCF005069F3 /* ObservableProtocolProvider.swift in Sources */,
-				6777F29C2107A9CC005069F3 /* Queue.swift in Sources */,
-				6777F2972107A95F005069F3 /* Thread.swift in Sources */,
+				6777F2972107A95F005069F3 /* Threading.swift in Sources */,
 				6777F2882107A4F4005069F3 /* Lock.swift in Sources */,
 				6777F2922107A926005069F3 /* SubjectProtocol.swift in Sources */,
 				6777F27E2107A428005069F3 /* ObservableProtocol.swift in Sources */,
+				672B85D42109A07F00790E50 /* ExecutionContext.swift in Sources */,
 				6777F28D2107A90F005069F3 /* SignalProtocol.swift in Sources */,
+				672B85CF2109983900790E50 /* BindableProtocol.swift in Sources */,
 				6777F2A12107AC5B005069F3 /* Timer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

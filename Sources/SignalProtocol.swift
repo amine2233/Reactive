@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol SignalProtocol {
+public protocol SignalProtocol {
     
     associatedtype Element
     
@@ -18,7 +18,7 @@ protocol SignalProtocol {
 public final class Signal<T>: SignalProtocol {
     
     public typealias Producer = (Observable<T>) -> Void
-    private let producer: Producer
+    internal let producer: Producer
     
     public init(producer: @escaping Producer) {
         self.producer = producer
@@ -28,5 +28,17 @@ public final class Signal<T>: SignalProtocol {
     public func observe(with observer: Observable<T>) -> ObservableToken? {
         producer(observer)
         return nil
+    }
+}
+
+extension SignalProtocol {
+    public func toSignal() -> Signal<Element> {
+        if let signal = self as? Signal<Element> {
+            return signal
+        } else {
+            return Signal { observer in
+                return self.observe(with: observer)
+            }
+        }
     }
 }

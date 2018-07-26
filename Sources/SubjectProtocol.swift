@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol SubjectProtocol: SignalProtocol, ObservableProtocol {}
+public protocol SubjectProtocol: SignalProtocol, ObservableProtocol {}
 
 public final class Subject<T>: SubjectProtocol {
 
@@ -81,4 +81,8 @@ public final class Subject<T>: SubjectProtocol {
             self.observers.removeAll()
         }
     }
+}
+
+extension Subject {
+    
 }
