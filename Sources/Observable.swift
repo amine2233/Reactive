@@ -51,7 +51,7 @@ public final class Observable<T>: ObservableProtocol {
     public func subscribe(_ observer: @escaping (T) -> Void) -> ObservableToken {
         var token: ObservableToken!
         mutex.lock {
-            let newHashValue = (observers.keys.map({$0.hashValue}).max() ?? -1) + 1
+            let newHashValue = (observers.keys.map{$0.hashValue}.max() ?? -1) + 1
             token = ObservableToken(hashValue: newHashValue)
             if !(options.contains(.Once) && value != nil) {
                 observers[token] = observer

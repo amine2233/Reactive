@@ -49,14 +49,3 @@ public struct ExecutionContext {
         }
     }
 }
-
-extension SignalProtocol {
-    
-    public func observeIn(_ context: ExecutionContext) -> Signal<Element> {
-        return Signal { observe in
-            context.execute {
-                self.observe(with: observe)
-            }
-        }
-    }
-}
