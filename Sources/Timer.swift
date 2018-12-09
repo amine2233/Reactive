@@ -8,7 +8,7 @@
 import Foundation
 
 public extension Observable {
-    
+
     public func wait(_ timeout: TimeInterval? = nil) throws -> T {
         let group = DispatchGroup()
         var value: T! = nil
@@ -23,7 +23,7 @@ public extension Observable {
         }
         return value
     }
-    
+
     public func delay(_ seconds: TimeInterval, queue: DispatchQueue = DispatchQueue.main) -> Observable<T> {
         let observable = Observable<T>()
         subscribe { result in
@@ -33,7 +33,7 @@ public extension Observable {
         }
         return observable
     }
-    
+
     public func debounce(_ seconds: TimeInterval) -> Observable<T> {
         let observable = Observable<T>()
         var lastCalled: Date?
@@ -47,9 +47,9 @@ public extension Observable {
                         observable.update(value)
                     } else {
                         if currentTime.compare(lastCalled!) == .orderedDescending {
-                            let s = Observable<T>()
-                            s.delay(seconds - timeSinceLastCall!).subscribe(updateIfNeeded(observable))
-                            s.update(value)
+                            let obs = Observable<T>()
+                            obs.delay(seconds - timeSinceLastCall!).subscribe(updateIfNeeded(observable))
+                            obs.update(value)
                         }
                     }
                 }

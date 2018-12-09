@@ -8,22 +8,22 @@
 import Foundation
 
 public struct ObservingOptions: OptionSet {
-    
+
     public let rawValue: Int
-    
+
     public init(rawValue: Int) {
         self.rawValue = rawValue
     }
-    
+
     public static let NoInitialValue = ObservingOptions(rawValue: 1)
-    
+
     public static let Once = ObservingOptions(rawValue: 2)
 }
 
 public protocol ObservableProtocol {
-    
+
     associatedtype Element
-    
+
     var value: Element? { get }
 }
 
@@ -35,23 +35,23 @@ public final class Observable<T>: ObservableProtocol {
     public private(set) var value: T?
     public let options: ObservingOptions
     fileprivate let mutex = Lock()
-    
+
     public init(options: ObservingOptions = []) {
         self.options = options
     }
-    
+
     public init(_ value: T, options: ObservingOptions = []) {
         self.options = options
         if !options.contains(.NoInitialValue) {
             self.value = value
         }
     }
-    
+
     @discardableResult
     public func subscribe(_ observer: @escaping (T) -> Void) -> ObservableToken {
         var token: ObservableToken!
         mutex.lock {
-            let newHashValue = (observers.keys.map{$0.hashValue}.max() ?? -1) + 1
+            let newHashValue = (observers.keys.map {$0.hashValue}.max() ?? -1) + 1
             token = ObservableToken(hashValue: newHashValue)
             if !(options.contains(.Once) && value != nil) {
                 observers[token] = observer
@@ -62,7 +62,7 @@ public final class Observable<T>: ObservableProtocol {
         }
         return token
     }
-    
+
     public func update(_ value: T) {
         mutex.lock {
             if !options.contains(.NoInitialValue) {
@@ -76,7 +76,7 @@ public final class Observable<T>: ObservableProtocol {
             }
         }
     }
-    
+
     public func unsubscribe(_ token: ObservableToken) {
         mutex.lock {
             observers[token] = nil
@@ -100,34 +100,34 @@ public final class Observable<T>: ObservableProtocol {
 }
 
 public extension Observable {
-    
+
     public func map<U>(_ transform: @escaping (T) -> U) -> Observable<U> {
         let observable = Observable<U>(options: options)
         subscribe { observable.update(transform($0)) }
         return observable
     }
-    
+
     public func flatMap<U>(_ transform: @escaping (T) -> Observable<U>) -> Observable<U> {
         let observable = Observable<U>(options: options)
         subscribe { transform($0).subscribe(observable.update) }
         return observable
     }
-    
-    public func merge<U>(_ merge: Observable<U>) -> Observable<(T,U)> {
-        let signal = Observable<(T,U)>()
-        self.subscribe { a in
-            if let b = merge.value {
-                signal.update((a,b))
+
+    public func merge<U>(_ merge: Observable<U>) -> Observable<(T, U)> {
+        let signal = Observable<(T, U)>()
+        self.subscribe { aleft in
+            if let bright = merge.value {
+                signal.update((aleft, bright))
             }
         }
-        merge.subscribe { b in
-            if let a = self.value {
-                signal.update((a,b))
+        merge.subscribe { bright in
+            if let aleft = self.value {
+                signal.update((aleft, bright))
             }
         }
         return signal
     }
-    
+
     public func filter(_ whereFilter: @escaping (T) -> Bool) -> Observable<T> {
         let observable = Observable<T>()
         subscribe { value in

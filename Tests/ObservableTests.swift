@@ -10,11 +10,11 @@ import XCTest
 @testable import Reactive
 
 class ObservableTests: XCTestCase {
-    
+
     func greeter(_ subject: String) -> String {
         return "Hello \(subject)"
     }
-    
+
     func greetLater(_ subject: String) -> Observable<String> {
         return Observable("Hello \(subject)")
     }
@@ -23,54 +23,54 @@ class ObservableTests: XCTestCase {
         let greeting = Observable("World").map(greeter)
         XCTAssertEqual(greeting.value, "Hello World")
     }
-    
+
     func testFlatMappingAnObservable() {
         let greeting = Observable("World").flatMap(greetLater)
         XCTAssertEqual(greeting.value, "Hello World")
     }
-    
+
     func testSubscription() {
         let observable = Observable<String>()
         let expectation = self.expectation(description: "subscription not completed")
-        observable.subscribe { a in
+        observable.subscribe { _ in
             expectation.fulfill()
         }
         observable.update("Hello")
         waitForExpectations(timeout: 0.2, handler: nil)
     }
-    
+
     func testOnceSubscription() {
-        let observable = Observable<String>(options:[.Once])
+        let observable = Observable<String>(options: [.Once])
         var count = 0
-        observable.subscribe { a in
+        observable.subscribe { _ in
             count += 1
         }
         observable.update("Hello")
         observable.update("Hello")
         XCTAssertEqual(count, 1)
     }
-    
+
     func testOnceSubscriptionAfterCompletion() {
-        let observable = Observable<String>("Hello", options:[.Once])
+        let observable = Observable<String>("Hello", options: [.Once])
         var count = 0
-        observable.subscribe { a in
+        observable.subscribe { _ in
             count += 1
         }
         observable.update("Hello")
         XCTAssertEqual(count, 1)
     }
-    
+
     func testLiveSubscriptions() {
-        let observable = Observable<String>("Hello", options:[.NoInitialValue])
+        let observable = Observable<String>("Hello", options: [.NoInitialValue])
         XCTAssertNil(observable.value)
         observable.update("Hello")
         XCTAssertNil(observable.value)
     }
-    
+
     func testUnsubscribe() {
         let observable = Observable<String>()
         var count = 0
-        let token = observable.subscribe { a in
+        let token = observable.subscribe { _ in
             count += 1
         }
         observable.update("Hello")
@@ -78,7 +78,7 @@ class ObservableTests: XCTestCase {
         observable.update("Hello")
         XCTAssertEqual(count, 1)
     }
-    
+
     func testMergeInvocations() {
         let lhs = Observable<String>()
         let rhs = Observable<String>()
@@ -91,7 +91,7 @@ class ObservableTests: XCTestCase {
         rhs.update("")
         XCTAssertEqual(count, 1)
     }
-    
+
     func testMergeValues() {
         let lhs = Observable<String>()
         let rhs = Observable<String>()
@@ -106,7 +106,7 @@ class ObservableTests: XCTestCase {
         XCTAssertEqual(first, "first")
         XCTAssertEqual(second, "second")
     }
-    
+
     func testSelfMergeValues() {
         let lhs = Observable<String>()
         let rhs = Observable<String>()
@@ -121,7 +121,7 @@ class ObservableTests: XCTestCase {
         XCTAssertEqual(first, "second")
         XCTAssertEqual(second, "first")
     }
-    
+
     func testMergingObservables() {
         let hello = Observable("Hello")
         let world = Observable<String>()
@@ -134,23 +134,23 @@ class ObservableTests: XCTestCase {
         XCTAssertEqual(updateCalled, 1)
         XCTAssertEqual(greeting.value ?? [""], ["Hello", "World"])
     }
-    
+
     func testMergingObservablesNoInitialValue() {
         let hello = Observable("Hello")
         let world = Observable<String>(options: .NoInitialValue)
         expectingPreconditionFailure(expectedMessage: "Event style observables do not support merging") {
-            let _ = Observable<[String]>.merge([hello, world])
+            _ = Observable<[String]>.merge([hello, world])
         }
     }
-    
+
     func testFilterObservable() {
         let underTest = Observable<Int>()
         var results = [Int]()
-        
+
         // Filter even numbers
         underTest.filter { $0 % 2 == 0 }.subscribe { results.append($0) }
         [1, 2, 3, 4, 5, 6].forEach { underTest.update($0) }
-        
+
         XCTAssert(results == [2, 4, 6])
     }
 

@@ -9,5 +9,5 @@ func precondition(_ condition: @autoclosure () -> Bool, _ message: @autoclosure 
 }
 
 /// The actual function called by our custom `precondition`.
-var preconditionClosure: (Bool, String, StaticString, UInt) -> () = defaultPreconditionClosure
+var preconditionClosure: (Bool, String, StaticString, UInt) -> Void = defaultPreconditionClosure
 let defaultPreconditionClosure = {Swift.precondition($0, $1, file: $2, line: $3)}

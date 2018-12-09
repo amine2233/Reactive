@@ -9,44 +9,44 @@ import Foundation
 import Dispatch
 
 public final class Threading {
-    
-    public static func main<T>(_ a: T, completion: @escaping (T) -> Void) {
-        queue(DispatchQueue.main)(a,completion)
+
+    public static func main<T>(_ block: T, completion: @escaping (T) -> Void) {
+        queue(DispatchQueue.main)(block, completion)
     }
-    
+
     public static func queue<T>(_ queue: DispatchQueue) -> (T, @escaping (T) -> Void) -> Void {
-        return { a, completion in
+        return { block, completion in
             queue.async {
-                completion(a)
+                completion(block)
             }
         }
     }
-    
-    public static func background<T>(_ a: T, completion: @escaping (T) -> Void) {
+
+    public static func background<T>(_ block: T, completion: @escaping (T) -> Void) {
         DispatchQueue.global(qos: .background).async {
-            completion(a)
+            completion(block)
         }
     }
 }
 
 public final class Queue {
-    
-    public static func main<T>(_ a: T) -> Observable<T> {
-        return queue(DispatchQueue.main)(a)
+
+    public static func main<T>(_ block: T) -> Observable<T> {
+        return queue(DispatchQueue.main)(block)
     }
-    
+
     public static func queue<T>(_ queue: DispatchQueue) -> (T) -> Observable<T> {
-        return { t in
+        return { value in
             let observable = Observable<T>(options: [.Once])
             queue.async {
-                observable.update(t)
+                observable.update(value)
             }
             return observable
         }
     }
-    
-    public static func background<T>(_ a: T) -> Observable<T> {
-        let q = DispatchQueue.global(qos: .background)
-        return queue(q)(a)
+
+    public static func background<T>(_ block: T) -> Observable<T> {
+        let dispatchQueue = DispatchQueue.global(qos: .background)
+        return queue(dispatchQueue)(block)
     }
 }
