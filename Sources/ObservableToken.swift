@@ -13,6 +13,10 @@ public final class ObservableToken: Hashable {
     internal init(hashValue: Int) {
         self.hashValue = hashValue
     }
+
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(hashValue)
+    }
 }
 
 public func == (lhs: ObservableToken, rhs: ObservableToken) -> Bool {
