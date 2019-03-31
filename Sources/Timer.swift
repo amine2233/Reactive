@@ -7,7 +7,7 @@
 
 import Foundation
 
-public extension Observable {
+extension Observable {
 
     public func wait(_ timeout: TimeInterval? = nil) throws -> T {
         let group = DispatchGroup()

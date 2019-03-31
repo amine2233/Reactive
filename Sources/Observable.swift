@@ -99,7 +99,7 @@ public final class Observable<T>: ObservableProtocol {
     }
 }
 
-public extension Observable {
+extension Observable {
 
     public func map<U>(_ transform: @escaping (T) -> U) -> Observable<U> {
         let observable = Observable<U>(options: options)
