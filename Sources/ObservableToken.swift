@@ -8,17 +8,17 @@
 import Foundation
 
 public final class ObservableToken: Hashable {
-    public let hashValue: Int
+    public let token: Int
 
-    internal init(hashValue: Int) {
-        self.hashValue = hashValue
+    internal init(token: Int) {
+        self.token = token
     }
 
     public func hash(into hasher: inout Hasher) {
-        hasher.combine(hashValue)
+        hasher.combine(token)
     }
 }
 
 public func == (lhs: ObservableToken, rhs: ObservableToken) -> Bool {
-    return lhs.hashValue == rhs.hashValue
+    return lhs.token == rhs.token
 }

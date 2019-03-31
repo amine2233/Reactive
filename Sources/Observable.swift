@@ -52,7 +52,7 @@ public final class Observable<T>: ObservableProtocol {
         var token: ObservableToken!
         mutex.lock {
             let newHashValue = (observers.keys.map {$0.hashValue}.max() ?? -1) + 1
-            token = ObservableToken(hashValue: newHashValue)
+            token = ObservableToken(token: newHashValue)
             if !(options.contains(.Once) && value != nil) {
                 observers[token] = observer
             }
