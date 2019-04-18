@@ -8,10 +8,10 @@
 import Foundation
 
 extension Observable {
-    public func map<U, Error>(_ transform: @escaping (T) throws -> U) -> Observable<Result<U, Error>> {
+    public func map<U>(_ transform: @escaping (T) throws -> U) -> Observable<Result<U, Error>> {
         let observable = Observable<Result<U, Error>>(options: options)
         subscribe { value in
-            observable.update(Result(block: { return try transform(value) }))
+            observable.update(Result(catching: { return try transform(value) }))
         }
         return observable
     }
@@ -20,17 +20,20 @@ extension Observable {
 extension Observable where T: ResultProtocol {
 
     /// Observables containing a Result<Value,Error> can be chained to only continue in the success case.
-    public func then<NewSuccess>(_ transform: @escaping ((T.Success) -> Result<NewSuccess, T.Failure>)) -> Observable<Result<NewSuccess, T.Failure>> {
+    public func then<NewSuccess>(_ transform: @escaping ((T.Success) -> Result<NewSuccess, T.Failure>))
+        -> Observable<Result<NewSuccess, T.Failure>> {
         return map { return $0.result.flatMap(transform) }
     }
 
     /// Observables containing a Result<Value,Error> can be chained to only continue in the success case.
-    public func then<NewSuccess>(_ transform: @escaping (T.Success) -> NewSuccess) -> Observable<Result<NewSuccess, T.Failure>> {
+    public func then<NewSuccess>(_ transform: @escaping (T.Success) -> NewSuccess)
+        -> Observable<Result<NewSuccess, T.Failure>> {
         return map { $0.result.map(transform) }
     }
 
     /// Observables containing a Result<Value,Error> can be chained to only continue in the success case.
-    public func then<NewSuccess>(_ transform: @escaping (T.Success) throws -> NewSuccess) -> Observable<Result<NewSuccess, T.Failure>> {
+    public func then<NewSuccess>(_ transform: @escaping (T.Success) throws -> NewSuccess)
+        -> Observable<Result<NewSuccess, T.Failure>> {
         return map { $0.result.flatMap(transform) }
     }
 
@@ -41,18 +44,14 @@ extension Observable where T: ResultProtocol {
     }
 
     /// Observables containing a Result<Value,Error> can be chained to only continue in the failure case.
-    public func thenError<NewFailure>(_ transform: @escaping (T.Failure) -> NewFailure) -> Observable<Result<T.Success, NewFailure>> where NewFailure : Error {
+    public func thenError<NewFailure>(_ transform: @escaping (T.Failure) -> NewFailure)
+        -> Observable<Result<T.Success, NewFailure>> where NewFailure : Error {
         return map { $0.result.mapError(transform) }
     }
 
-    /// Observables containing a Result<Value,Error> can be chained to only continue in the failure case.
-    public func thenError<NewFailure>(_ transform: @escaping (T.Failure) throws -> NewFailure)
-        -> Observable<Result<T.Success, NewFailure>> where NewFailure : Error {
-        return map { $0.result.flatMapError(transform) }
-    }
-
     /// Observables containing a Result<Value,Error> can be chained to only continue in the success case.
-    public func then<NewSuccess>(_ transform: @escaping (T.Success) -> Observable<NewSuccess>) -> Observable<Result<NewSuccess, T.Failure>> {
+    public func then<NewSuccess>(_ transform: @escaping (T.Success) -> Observable<NewSuccess>)
+        -> Observable<Result<NewSuccess, T.Failure>> {
         return flatMap { [options] in
             let observer = Observable<Result<NewSuccess, T.Failure>>(options: options)
             switch $0.result {
@@ -64,7 +63,8 @@ extension Observable where T: ResultProtocol {
     }
 
     /// Observables containing a Result<Value,Error> can be chained to only continue in the success case.
-    public func then<NewSuccess>(_ transform: @escaping (T.Success) -> Observable<Result<NewSuccess, T.Failure>>) -> Observable<Result<NewSuccess, T.Failure>> {
+    public func then<NewSuccess>(_ transform: @escaping (T.Success) -> Observable<Result<NewSuccess, T.Failure>>)
+        -> Observable<Result<NewSuccess, T.Failure>> {
         return flatMap { [options] in
             switch $0.result {
             case let .success(value): return transform(value)
