@@ -7,10 +7,73 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		672B85D12109A07F00790E50 /* ExecutionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672B85D02109A07F00790E50 /* ExecutionContext.swift */; };
-		672B85D22109A07F00790E50 /* ExecutionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672B85D02109A07F00790E50 /* ExecutionContext.swift */; };
-		672B85D32109A07F00790E50 /* ExecutionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672B85D02109A07F00790E50 /* ExecutionContext.swift */; };
-		672B85D42109A07F00790E50 /* ExecutionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672B85D02109A07F00790E50 /* ExecutionContext.swift */; };
+		6730EE52225A061D00B245F9 /* Info-iOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6730EE42225A061D00B245F9 /* Info-iOS.plist */; };
+		6730EE53225A061D00B245F9 /* Info-iOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6730EE42225A061D00B245F9 /* Info-iOS.plist */; };
+		6730EE54225A061D00B245F9 /* Info-iOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6730EE42225A061D00B245F9 /* Info-iOS.plist */; };
+		6730EE55225A061D00B245F9 /* Info-watchOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6730EE43225A061D00B245F9 /* Info-watchOS.plist */; };
+		6730EE57225A061D00B245F9 /* Info-watchOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6730EE43225A061D00B245F9 /* Info-watchOS.plist */; };
+		6730EE58225A061D00B245F9 /* Info-watchOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6730EE43225A061D00B245F9 /* Info-watchOS.plist */; };
+		6730EE59225A061D00B245F9 /* Info-tvOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6730EE44225A061D00B245F9 /* Info-tvOS.plist */; };
+		6730EE5A225A061D00B245F9 /* Info-tvOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6730EE44225A061D00B245F9 /* Info-tvOS.plist */; };
+		6730EE5C225A061D00B245F9 /* Info-tvOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6730EE44225A061D00B245F9 /* Info-tvOS.plist */; };
+		6730EE5D225A061D00B245F9 /* Info-macOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6730EE45225A061D00B245F9 /* Info-macOS.plist */; };
+		6730EE5E225A061D00B245F9 /* Info-macOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6730EE45225A061D00B245F9 /* Info-macOS.plist */; };
+		6730EE5F225A061D00B245F9 /* Info-macOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6730EE45225A061D00B245F9 /* Info-macOS.plist */; };
+		6730EE61225A061D00B245F9 /* Threading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE47225A061D00B245F9 /* Threading.swift */; };
+		6730EE62225A061D00B245F9 /* Threading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE47225A061D00B245F9 /* Threading.swift */; };
+		6730EE63225A061D00B245F9 /* Threading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE47225A061D00B245F9 /* Threading.swift */; };
+		6730EE64225A061D00B245F9 /* Threading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE47225A061D00B245F9 /* Threading.swift */; };
+		6730EE65225A061D00B245F9 /* Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE48225A061D00B245F9 /* Lock.swift */; };
+		6730EE66225A061D00B245F9 /* Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE48225A061D00B245F9 /* Lock.swift */; };
+		6730EE67225A061D00B245F9 /* Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE48225A061D00B245F9 /* Lock.swift */; };
+		6730EE68225A061D00B245F9 /* Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE48225A061D00B245F9 /* Lock.swift */; };
+		6730EE69225A061D00B245F9 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE49225A061D00B245F9 /* Timer.swift */; };
+		6730EE6A225A061D00B245F9 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE49225A061D00B245F9 /* Timer.swift */; };
+		6730EE6B225A061D00B245F9 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE49225A061D00B245F9 /* Timer.swift */; };
+		6730EE6C225A061D00B245F9 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE49225A061D00B245F9 /* Timer.swift */; };
+		6730EE6D225A061D00B245F9 /* ObservableToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE4A225A061D00B245F9 /* ObservableToken.swift */; };
+		6730EE6E225A061D00B245F9 /* ObservableToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE4A225A061D00B245F9 /* ObservableToken.swift */; };
+		6730EE6F225A061D00B245F9 /* ObservableToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE4A225A061D00B245F9 /* ObservableToken.swift */; };
+		6730EE70225A061D00B245F9 /* ObservableToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE4A225A061D00B245F9 /* ObservableToken.swift */; };
+		6730EE71225A061D00B245F9 /* ExecutionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE4B225A061D00B245F9 /* ExecutionContext.swift */; };
+		6730EE72225A061D00B245F9 /* ExecutionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE4B225A061D00B245F9 /* ExecutionContext.swift */; };
+		6730EE73225A061D00B245F9 /* ExecutionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE4B225A061D00B245F9 /* ExecutionContext.swift */; };
+		6730EE74225A061D00B245F9 /* ExecutionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE4B225A061D00B245F9 /* ExecutionContext.swift */; };
+		6730EE75225A061D00B245F9 /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE4D225A061D00B245F9 /* Future.swift */; };
+		6730EE76225A061D00B245F9 /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE4D225A061D00B245F9 /* Future.swift */; };
+		6730EE77225A061D00B245F9 /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE4D225A061D00B245F9 /* Future.swift */; };
+		6730EE78225A061D00B245F9 /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE4D225A061D00B245F9 /* Future.swift */; };
+		6730EE79225A061D00B245F9 /* ObservableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE4E225A061D00B245F9 /* ObservableExtension.swift */; };
+		6730EE7A225A061D00B245F9 /* ObservableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE4E225A061D00B245F9 /* ObservableExtension.swift */; };
+		6730EE7B225A061D00B245F9 /* ObservableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE4E225A061D00B245F9 /* ObservableExtension.swift */; };
+		6730EE7C225A061D00B245F9 /* ObservableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE4E225A061D00B245F9 /* ObservableExtension.swift */; };
+		6730EE7D225A061D00B245F9 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE4F225A061D00B245F9 /* Observable.swift */; };
+		6730EE7E225A061D00B245F9 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE4F225A061D00B245F9 /* Observable.swift */; };
+		6730EE7F225A061D00B245F9 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE4F225A061D00B245F9 /* Observable.swift */; };
+		6730EE80225A061D00B245F9 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE4F225A061D00B245F9 /* Observable.swift */; };
+		6730EE81225A061D00B245F9 /* Precondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE50225A061D00B245F9 /* Precondition.swift */; };
+		6730EE82225A061D00B245F9 /* Precondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE50225A061D00B245F9 /* Precondition.swift */; };
+		6730EE83225A061D00B245F9 /* Precondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE50225A061D00B245F9 /* Precondition.swift */; };
+		6730EE84225A061D00B245F9 /* Precondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE50225A061D00B245F9 /* Precondition.swift */; };
+		6730EE8E225A062C00B245F9 /* Info-Test-iOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6730EE86225A062C00B245F9 /* Info-Test-iOS.plist */; };
+		6730EE8F225A062C00B245F9 /* Info-Test-iOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6730EE86225A062C00B245F9 /* Info-Test-iOS.plist */; };
+		6730EE90225A062C00B245F9 /* Info-Test-tvOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6730EE87225A062C00B245F9 /* Info-Test-tvOS.plist */; };
+		6730EE92225A062C00B245F9 /* Info-Test-tvOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6730EE87225A062C00B245F9 /* Info-Test-tvOS.plist */; };
+		6730EE93225A062C00B245F9 /* Info-Test-macOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6730EE88225A062C00B245F9 /* Info-Test-macOS.plist */; };
+		6730EE94225A062C00B245F9 /* Info-Test-macOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6730EE88225A062C00B245F9 /* Info-Test-macOS.plist */; };
+		6730EE96225A062C00B245F9 /* ObservableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE8A225A062C00B245F9 /* ObservableTests.swift */; };
+		6730EE97225A062C00B245F9 /* ObservableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE8A225A062C00B245F9 /* ObservableTests.swift */; };
+		6730EE98225A062C00B245F9 /* ObservableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE8A225A062C00B245F9 /* ObservableTests.swift */; };
+		6730EE99225A062C00B245F9 /* ThreadingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE8B225A062C00B245F9 /* ThreadingTests.swift */; };
+		6730EE9A225A062C00B245F9 /* ThreadingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE8B225A062C00B245F9 /* ThreadingTests.swift */; };
+		6730EE9B225A062C00B245F9 /* ThreadingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE8B225A062C00B245F9 /* ThreadingTests.swift */; };
+		6730EE9C225A062C00B245F9 /* XCTest+Precondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE8C225A062C00B245F9 /* XCTest+Precondition.swift */; };
+		6730EE9D225A062C00B245F9 /* XCTest+Precondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE8C225A062C00B245F9 /* XCTest+Precondition.swift */; };
+		6730EE9E225A062C00B245F9 /* XCTest+Precondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE8C225A062C00B245F9 /* XCTest+Precondition.swift */; };
+		6730EEA3225A0C0C00B245F9 /* ResultExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE9F225A06F900B245F9 /* ResultExtension.swift */; };
+		6730EEA4225A0C0D00B245F9 /* ResultExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE9F225A06F900B245F9 /* ResultExtension.swift */; };
+		6730EEA5225A0C0D00B245F9 /* ResultExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE9F225A06F900B245F9 /* ResultExtension.swift */; };
+		6730EEA6225A0C0F00B245F9 /* ResultExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE9F225A06F900B245F9 /* ResultExtension.swift */; };
 		6777F21521079F09005069F3 /* Reactive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6777F20B21079F09005069F3 /* Reactive.framework */; };
 		6777F23E21079F2E005069F3 /* Reactive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6777F23521079F2D005069F3 /* Reactive.framework */; };
 		6777F25A21079F43005069F3 /* Reactive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6777F25121079F43005069F3 /* Reactive.framework */; };
@@ -18,39 +81,6 @@
 		6777F2732107A20D005069F3 /* Reactive.h in Headers */ = {isa = PBXBuildFile; fileRef = 6777F2712107A20D005069F3 /* Reactive.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6777F2742107A20D005069F3 /* Reactive.h in Headers */ = {isa = PBXBuildFile; fileRef = 6777F2712107A20D005069F3 /* Reactive.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6777F2752107A20D005069F3 /* Reactive.h in Headers */ = {isa = PBXBuildFile; fileRef = 6777F2712107A20D005069F3 /* Reactive.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6777F27B2107A428005069F3 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F27A2107A428005069F3 /* Observable.swift */; };
-		6777F27C2107A428005069F3 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F27A2107A428005069F3 /* Observable.swift */; };
-		6777F27D2107A428005069F3 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F27A2107A428005069F3 /* Observable.swift */; };
-		6777F27E2107A428005069F3 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F27A2107A428005069F3 /* Observable.swift */; };
-		6777F2802107A4AF005069F3 /* ObservableToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F27F2107A4AF005069F3 /* ObservableToken.swift */; };
-		6777F2812107A4AF005069F3 /* ObservableToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F27F2107A4AF005069F3 /* ObservableToken.swift */; };
-		6777F2822107A4AF005069F3 /* ObservableToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F27F2107A4AF005069F3 /* ObservableToken.swift */; };
-		6777F2832107A4AF005069F3 /* ObservableToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F27F2107A4AF005069F3 /* ObservableToken.swift */; };
-		6777F2852107A4F4005069F3 /* Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F2842107A4F4005069F3 /* Lock.swift */; };
-		6777F2862107A4F4005069F3 /* Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F2842107A4F4005069F3 /* Lock.swift */; };
-		6777F2872107A4F4005069F3 /* Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F2842107A4F4005069F3 /* Lock.swift */; };
-		6777F2882107A4F4005069F3 /* Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F2842107A4F4005069F3 /* Lock.swift */; };
-		6777F2942107A95F005069F3 /* Threading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F2932107A95F005069F3 /* Threading.swift */; };
-		6777F2952107A95F005069F3 /* Threading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F2932107A95F005069F3 /* Threading.swift */; };
-		6777F2962107A95F005069F3 /* Threading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F2932107A95F005069F3 /* Threading.swift */; };
-		6777F2972107A95F005069F3 /* Threading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F2932107A95F005069F3 /* Threading.swift */; };
-		6777F29E2107AC5B005069F3 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F29D2107AC5B005069F3 /* Timer.swift */; };
-		6777F29F2107AC5B005069F3 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F29D2107AC5B005069F3 /* Timer.swift */; };
-		6777F2A02107AC5B005069F3 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F29D2107AC5B005069F3 /* Timer.swift */; };
-		6777F2A12107AC5B005069F3 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F29D2107AC5B005069F3 /* Timer.swift */; };
-		67B7F23021BBC8C4003554AC /* ObservableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B7F22F21BBC8C4003554AC /* ObservableTests.swift */; };
-		67B7F23121BBC8C4003554AC /* ObservableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B7F22F21BBC8C4003554AC /* ObservableTests.swift */; };
-		67B7F23221BBC8C4003554AC /* ObservableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B7F22F21BBC8C4003554AC /* ObservableTests.swift */; };
-		67B7F24021BBD80A003554AC /* XCTest+Precondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B7F23F21BBD80A003554AC /* XCTest+Precondition.swift */; };
-		67B7F24121BBD80A003554AC /* XCTest+Precondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B7F23F21BBD80A003554AC /* XCTest+Precondition.swift */; };
-		67B7F24221BBD80A003554AC /* XCTest+Precondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B7F23F21BBD80A003554AC /* XCTest+Precondition.swift */; };
-		67B7F24421BBDC28003554AC /* Precondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B7F24321BBDC28003554AC /* Precondition.swift */; };
-		67B7F24521BBDC28003554AC /* Precondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B7F24321BBDC28003554AC /* Precondition.swift */; };
-		67B7F24621BBDC28003554AC /* Precondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B7F24321BBDC28003554AC /* Precondition.swift */; };
-		67B7F24721BBDC28003554AC /* Precondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B7F24321BBDC28003554AC /* Precondition.swift */; };
-		67B7F24921BBDD4E003554AC /* ThreadingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B7F24821BBDD4E003554AC /* ThreadingTests.swift */; };
-		67B7F24A21BBDD4E003554AC /* ThreadingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B7F24821BBDD4E003554AC /* ThreadingTests.swift */; };
-		67B7F24B21BBDD4E003554AC /* ThreadingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B7F24821BBDD4E003554AC /* ThreadingTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,7 +109,26 @@
 
 /* Begin PBXFileReference section */
 		672B85CA2109954900790E50 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = SOURCE_ROOT; };
-		672B85D02109A07F00790E50 /* ExecutionContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecutionContext.swift; sourceTree = "<group>"; };
+		6730EE42225A061D00B245F9 /* Info-iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
+		6730EE43225A061D00B245F9 /* Info-watchOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-watchOS.plist"; sourceTree = "<group>"; };
+		6730EE44225A061D00B245F9 /* Info-tvOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
+		6730EE45225A061D00B245F9 /* Info-macOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-macOS.plist"; sourceTree = "<group>"; };
+		6730EE47225A061D00B245F9 /* Threading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Threading.swift; sourceTree = "<group>"; };
+		6730EE48225A061D00B245F9 /* Lock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lock.swift; sourceTree = "<group>"; };
+		6730EE49225A061D00B245F9 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		6730EE4A225A061D00B245F9 /* ObservableToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableToken.swift; sourceTree = "<group>"; };
+		6730EE4B225A061D00B245F9 /* ExecutionContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExecutionContext.swift; sourceTree = "<group>"; };
+		6730EE4D225A061D00B245F9 /* Future.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Future.swift; sourceTree = "<group>"; };
+		6730EE4E225A061D00B245F9 /* ObservableExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableExtension.swift; sourceTree = "<group>"; };
+		6730EE4F225A061D00B245F9 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		6730EE50225A061D00B245F9 /* Precondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Precondition.swift; sourceTree = "<group>"; };
+		6730EE86225A062C00B245F9 /* Info-Test-iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-Test-iOS.plist"; sourceTree = "<group>"; };
+		6730EE87225A062C00B245F9 /* Info-Test-tvOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-Test-tvOS.plist"; sourceTree = "<group>"; };
+		6730EE88225A062C00B245F9 /* Info-Test-macOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-Test-macOS.plist"; sourceTree = "<group>"; };
+		6730EE8A225A062C00B245F9 /* ObservableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableTests.swift; sourceTree = "<group>"; };
+		6730EE8B225A062C00B245F9 /* ThreadingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadingTests.swift; sourceTree = "<group>"; };
+		6730EE8C225A062C00B245F9 /* XCTest+Precondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTest+Precondition.swift"; sourceTree = "<group>"; };
+		6730EE9F225A06F900B245F9 /* ResultExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultExtension.swift; sourceTree = "<group>"; };
 		6777F20B21079F09005069F3 /* Reactive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Reactive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6777F21421079F09005069F3 /* ReactiveTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6777F22821079F1A005069F3 /* Reactive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Reactive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,23 +136,7 @@
 		6777F23D21079F2E005069F3 /* ReactiveTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6777F25121079F43005069F3 /* Reactive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Reactive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6777F25921079F43005069F3 /* ReactiveTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6777F26A2107A0A2005069F3 /* Info-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
-		6777F26B2107A0A2005069F3 /* Info-watchOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-watchOS.plist"; sourceTree = "<group>"; };
-		6777F26C2107A0A2005069F3 /* Info-macOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-macOS.plist"; sourceTree = "<group>"; };
-		6777F26D2107A0A2005069F3 /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
-		6777F26E2107A0B2005069F3 /* Info-Test-macOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-Test-macOS.plist"; sourceTree = "<group>"; };
-		6777F26F2107A0B2005069F3 /* Info-Test-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-Test-tvOS.plist"; sourceTree = "<group>"; };
-		6777F2702107A0B2005069F3 /* Info-Test-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-Test-iOS.plist"; sourceTree = "<group>"; };
 		6777F2712107A20D005069F3 /* Reactive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reactive.h; sourceTree = "<group>"; };
-		6777F27A2107A428005069F3 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
-		6777F27F2107A4AF005069F3 /* ObservableToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableToken.swift; sourceTree = "<group>"; };
-		6777F2842107A4F4005069F3 /* Lock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lock.swift; sourceTree = "<group>"; };
-		6777F2932107A95F005069F3 /* Threading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Threading.swift; sourceTree = "<group>"; };
-		6777F29D2107AC5B005069F3 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
-		67B7F22F21BBC8C4003554AC /* ObservableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableTests.swift; sourceTree = "<group>"; };
-		67B7F23F21BBD80A003554AC /* XCTest+Precondition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTest+Precondition.swift"; sourceTree = "<group>"; };
-		67B7F24321BBDC28003554AC /* Precondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Precondition.swift; sourceTree = "<group>"; };
-		67B7F24821BBDD4E003554AC /* ThreadingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadingTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +195,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6730EE41225A061D00B245F9 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				6730EE42225A061D00B245F9 /* Info-iOS.plist */,
+				6730EE43225A061D00B245F9 /* Info-watchOS.plist */,
+				6730EE44225A061D00B245F9 /* Info-tvOS.plist */,
+				6730EE45225A061D00B245F9 /* Info-macOS.plist */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		6730EE46225A061D00B245F9 /* Reactive */ = {
+			isa = PBXGroup;
+			children = (
+				6730EE47225A061D00B245F9 /* Threading.swift */,
+				6730EE48225A061D00B245F9 /* Lock.swift */,
+				6730EE49225A061D00B245F9 /* Timer.swift */,
+				6730EE4A225A061D00B245F9 /* ObservableToken.swift */,
+				6730EE4B225A061D00B245F9 /* ExecutionContext.swift */,
+				6730EE4C225A061D00B245F9 /* Promise */,
+				6730EE4F225A061D00B245F9 /* Observable.swift */,
+				6730EE50225A061D00B245F9 /* Precondition.swift */,
+			);
+			path = Reactive;
+			sourceTree = "<group>";
+		};
+		6730EE4C225A061D00B245F9 /* Promise */ = {
+			isa = PBXGroup;
+			children = (
+				6730EE4D225A061D00B245F9 /* Future.swift */,
+				6730EE4E225A061D00B245F9 /* ObservableExtension.swift */,
+				6730EE9F225A06F900B245F9 /* ResultExtension.swift */,
+			);
+			path = Promise;
+			sourceTree = "<group>";
+		};
+		6730EE85225A062C00B245F9 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				6730EE86225A062C00B245F9 /* Info-Test-iOS.plist */,
+				6730EE87225A062C00B245F9 /* Info-Test-tvOS.plist */,
+				6730EE88225A062C00B245F9 /* Info-Test-macOS.plist */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		6730EE89225A062C00B245F9 /* ReactiveTests */ = {
+			isa = PBXGroup;
+			children = (
+				6730EE8A225A062C00B245F9 /* ObservableTests.swift */,
+				6730EE8B225A062C00B245F9 /* ThreadingTests.swift */,
+				6730EE8C225A062C00B245F9 /* XCTest+Precondition.swift */,
+			);
+			path = ReactiveTests;
+			sourceTree = "<group>";
+		};
 		6777F1FF21079EB8005069F3 = {
 			isa = PBXGroup;
 			children = (
@@ -188,12 +277,8 @@
 		6777F26821079FBD005069F3 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				6777F2702107A0B2005069F3 /* Info-Test-iOS.plist */,
-				6777F26E2107A0B2005069F3 /* Info-Test-macOS.plist */,
-				6777F26F2107A0B2005069F3 /* Info-Test-tvOS.plist */,
-				67B7F22F21BBC8C4003554AC /* ObservableTests.swift */,
-				67B7F23F21BBD80A003554AC /* XCTest+Precondition.swift */,
-				67B7F24821BBDD4E003554AC /* ThreadingTests.swift */,
+				6730EE85225A062C00B245F9 /* Config */,
+				6730EE89225A062C00B245F9 /* ReactiveTests */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -201,19 +286,10 @@
 		6777F26921079FBD005069F3 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				6730EE41225A061D00B245F9 /* Config */,
+				6730EE46225A061D00B245F9 /* Reactive */,
 				672B85CA2109954900790E50 /* README */,
 				6777F2712107A20D005069F3 /* Reactive.h */,
-				6777F26D2107A0A2005069F3 /* Info-iOS.plist */,
-				6777F26C2107A0A2005069F3 /* Info-macOS.plist */,
-				6777F26A2107A0A2005069F3 /* Info-tvOS.plist */,
-				6777F26B2107A0A2005069F3 /* Info-watchOS.plist */,
-				6777F27F2107A4AF005069F3 /* ObservableToken.swift */,
-				6777F27A2107A428005069F3 /* Observable.swift */,
-				67B7F24321BBDC28003554AC /* Precondition.swift */,
-				6777F2842107A4F4005069F3 /* Lock.swift */,
-				6777F2932107A95F005069F3 /* Threading.swift */,
-				6777F29D2107AC5B005069F3 /* Timer.swift */,
-				672B85D02109A07F00790E50 /* ExecutionContext.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -392,15 +468,15 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0940;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1020;
 				TargetAttributes = {
 					6777F20A21079F09005069F3 = {
 						CreatedOnToolsVersion = 9.4.1;
-						LastSwiftMigration = 0940;
+						LastSwiftMigration = 1020;
 					};
 					6777F21321079F09005069F3 = {
 						CreatedOnToolsVersion = 9.4.1;
-						LastSwiftMigration = 0940;
+						LastSwiftMigration = 1020;
 					};
 					6777F22721079F1A005069F3 = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -430,6 +506,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 6777F1FF21079EB8005069F3;
 			productRefGroup = 6777F20C21079F09005069F3 /* Products */;
@@ -452,6 +529,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6730EE59225A061D00B245F9 /* Info-tvOS.plist in Resources */,
+				6730EE55225A061D00B245F9 /* Info-watchOS.plist in Resources */,
+				6730EE5D225A061D00B245F9 /* Info-macOS.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,6 +539,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6730EE90225A062C00B245F9 /* Info-Test-tvOS.plist in Resources */,
+				6730EE93225A062C00B245F9 /* Info-Test-macOS.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,6 +548,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6730EE5A225A061D00B245F9 /* Info-tvOS.plist in Resources */,
+				6730EE5E225A061D00B245F9 /* Info-macOS.plist in Resources */,
+				6730EE52225A061D00B245F9 /* Info-iOS.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,6 +558,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6730EE57225A061D00B245F9 /* Info-watchOS.plist in Resources */,
+				6730EE5F225A061D00B245F9 /* Info-macOS.plist in Resources */,
+				6730EE53225A061D00B245F9 /* Info-iOS.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +568,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6730EE8E225A062C00B245F9 /* Info-Test-iOS.plist in Resources */,
+				6730EE94225A062C00B245F9 /* Info-Test-macOS.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,6 +577,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6730EE5C225A061D00B245F9 /* Info-tvOS.plist in Resources */,
+				6730EE58225A061D00B245F9 /* Info-watchOS.plist in Resources */,
+				6730EE54225A061D00B245F9 /* Info-iOS.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +587,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6730EE92225A062C00B245F9 /* Info-Test-tvOS.plist in Resources */,
+				6730EE8F225A062C00B245F9 /* Info-Test-iOS.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,13 +656,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6777F2802107A4AF005069F3 /* ObservableToken.swift in Sources */,
-				6777F2942107A95F005069F3 /* Threading.swift in Sources */,
-				67B7F24421BBDC28003554AC /* Precondition.swift in Sources */,
-				6777F2852107A4F4005069F3 /* Lock.swift in Sources */,
-				6777F27B2107A428005069F3 /* Observable.swift in Sources */,
-				672B85D12109A07F00790E50 /* ExecutionContext.swift in Sources */,
-				6777F29E2107AC5B005069F3 /* Timer.swift in Sources */,
+				6730EE7D225A061D00B245F9 /* Observable.swift in Sources */,
+				6730EE79225A061D00B245F9 /* ObservableExtension.swift in Sources */,
+				6730EE75225A061D00B245F9 /* Future.swift in Sources */,
+				6730EE69225A061D00B245F9 /* Timer.swift in Sources */,
+				6730EE71225A061D00B245F9 /* ExecutionContext.swift in Sources */,
+				6730EE65225A061D00B245F9 /* Lock.swift in Sources */,
+				6730EEA3225A0C0C00B245F9 /* ResultExtension.swift in Sources */,
+				6730EE6D225A061D00B245F9 /* ObservableToken.swift in Sources */,
+				6730EE81225A061D00B245F9 /* Precondition.swift in Sources */,
+				6730EE61225A061D00B245F9 /* Threading.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -575,9 +673,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67B7F24021BBD80A003554AC /* XCTest+Precondition.swift in Sources */,
-				67B7F23021BBC8C4003554AC /* ObservableTests.swift in Sources */,
-				67B7F24921BBDD4E003554AC /* ThreadingTests.swift in Sources */,
+				6730EE9C225A062C00B245F9 /* XCTest+Precondition.swift in Sources */,
+				6730EE99225A062C00B245F9 /* ThreadingTests.swift in Sources */,
+				6730EE96225A062C00B245F9 /* ObservableTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,13 +683,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6777F2812107A4AF005069F3 /* ObservableToken.swift in Sources */,
-				6777F2952107A95F005069F3 /* Threading.swift in Sources */,
-				67B7F24521BBDC28003554AC /* Precondition.swift in Sources */,
-				6777F2862107A4F4005069F3 /* Lock.swift in Sources */,
-				6777F27C2107A428005069F3 /* Observable.swift in Sources */,
-				672B85D22109A07F00790E50 /* ExecutionContext.swift in Sources */,
-				6777F29F2107AC5B005069F3 /* Timer.swift in Sources */,
+				6730EE7E225A061D00B245F9 /* Observable.swift in Sources */,
+				6730EE7A225A061D00B245F9 /* ObservableExtension.swift in Sources */,
+				6730EE76225A061D00B245F9 /* Future.swift in Sources */,
+				6730EE6A225A061D00B245F9 /* Timer.swift in Sources */,
+				6730EE72225A061D00B245F9 /* ExecutionContext.swift in Sources */,
+				6730EE66225A061D00B245F9 /* Lock.swift in Sources */,
+				6730EEA4225A0C0D00B245F9 /* ResultExtension.swift in Sources */,
+				6730EE6E225A061D00B245F9 /* ObservableToken.swift in Sources */,
+				6730EE82225A061D00B245F9 /* Precondition.swift in Sources */,
+				6730EE62225A061D00B245F9 /* Threading.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,13 +700,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6777F2822107A4AF005069F3 /* ObservableToken.swift in Sources */,
-				6777F2962107A95F005069F3 /* Threading.swift in Sources */,
-				67B7F24621BBDC28003554AC /* Precondition.swift in Sources */,
-				6777F2872107A4F4005069F3 /* Lock.swift in Sources */,
-				6777F27D2107A428005069F3 /* Observable.swift in Sources */,
-				672B85D32109A07F00790E50 /* ExecutionContext.swift in Sources */,
-				6777F2A02107AC5B005069F3 /* Timer.swift in Sources */,
+				6730EE7F225A061D00B245F9 /* Observable.swift in Sources */,
+				6730EE7B225A061D00B245F9 /* ObservableExtension.swift in Sources */,
+				6730EE77225A061D00B245F9 /* Future.swift in Sources */,
+				6730EE6B225A061D00B245F9 /* Timer.swift in Sources */,
+				6730EE73225A061D00B245F9 /* ExecutionContext.swift in Sources */,
+				6730EE67225A061D00B245F9 /* Lock.swift in Sources */,
+				6730EEA5225A0C0D00B245F9 /* ResultExtension.swift in Sources */,
+				6730EE6F225A061D00B245F9 /* ObservableToken.swift in Sources */,
+				6730EE83225A061D00B245F9 /* Precondition.swift in Sources */,
+				6730EE63225A061D00B245F9 /* Threading.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,9 +717,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67B7F24121BBD80A003554AC /* XCTest+Precondition.swift in Sources */,
-				67B7F23121BBC8C4003554AC /* ObservableTests.swift in Sources */,
-				67B7F24A21BBDD4E003554AC /* ThreadingTests.swift in Sources */,
+				6730EE9D225A062C00B245F9 /* XCTest+Precondition.swift in Sources */,
+				6730EE9A225A062C00B245F9 /* ThreadingTests.swift in Sources */,
+				6730EE97225A062C00B245F9 /* ObservableTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -623,13 +727,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6777F2832107A4AF005069F3 /* ObservableToken.swift in Sources */,
-				6777F2972107A95F005069F3 /* Threading.swift in Sources */,
-				67B7F24721BBDC28003554AC /* Precondition.swift in Sources */,
-				6777F2882107A4F4005069F3 /* Lock.swift in Sources */,
-				6777F27E2107A428005069F3 /* Observable.swift in Sources */,
-				672B85D42109A07F00790E50 /* ExecutionContext.swift in Sources */,
-				6777F2A12107AC5B005069F3 /* Timer.swift in Sources */,
+				6730EE80225A061D00B245F9 /* Observable.swift in Sources */,
+				6730EE7C225A061D00B245F9 /* ObservableExtension.swift in Sources */,
+				6730EE78225A061D00B245F9 /* Future.swift in Sources */,
+				6730EE6C225A061D00B245F9 /* Timer.swift in Sources */,
+				6730EE74225A061D00B245F9 /* ExecutionContext.swift in Sources */,
+				6730EE68225A061D00B245F9 /* Lock.swift in Sources */,
+				6730EEA6225A0C0F00B245F9 /* ResultExtension.swift in Sources */,
+				6730EE70225A061D00B245F9 /* ObservableToken.swift in Sources */,
+				6730EE84225A061D00B245F9 /* Precondition.swift in Sources */,
+				6730EE64225A061D00B245F9 /* Threading.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -637,9 +744,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67B7F24221BBD80A003554AC /* XCTest+Precondition.swift in Sources */,
-				67B7F23221BBC8C4003554AC /* ObservableTests.swift in Sources */,
-				67B7F24B21BBDD4E003554AC /* ThreadingTests.swift in Sources */,
+				6730EE9E225A062C00B245F9 /* XCTest+Precondition.swift in Sources */,
+				6730EE9B225A062C00B245F9 /* ThreadingTests.swift in Sources */,
+				6730EE98225A062C00B245F9 /* ObservableTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -789,7 +896,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Sources/Info-iOS.plist";
+				INFOPLIST_FILE = "Sources/Config/Info-iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -804,7 +911,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -862,7 +969,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Sources/Info-iOS.plist";
+				INFOPLIST_FILE = "Sources/Config/Info-iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -876,7 +983,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -938,7 +1045,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Tests/Info-Test-iOS.plist";
+				INFOPLIST_FILE = "Tests/Config/Info-Test-iOS.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -952,7 +1059,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1005,7 +1112,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Tests/Info-Test-iOS.plist";
+				INFOPLIST_FILE = "Tests/Config/Info-Test-iOS.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1018,7 +1125,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1082,7 +1189,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Sources/Info-watchOS.plist";
+				INFOPLIST_FILE = "Sources/Config/Info-watchOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1156,7 +1263,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Sources/Info-watchOS.plist";
+				INFOPLIST_FILE = "Sources/Config/Info-watchOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1235,7 +1342,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Sources/Info-tvOS.plist";
+				INFOPLIST_FILE = "Sources/Config/Info-tvOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1308,7 +1415,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Sources/Info-tvOS.plist";
+				INFOPLIST_FILE = "Sources/Config/Info-tvOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1383,7 +1490,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Tests/Info-Test-tvOS.plist";
+				INFOPLIST_FILE = "Tests/Config/Info-Test-tvOS.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1449,7 +1556,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Tests/Info-Test-tvOS.plist";
+				INFOPLIST_FILE = "Tests/Config/Info-Test-tvOS.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1527,7 +1634,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Sources/Info-macOS.plist";
+				INFOPLIST_FILE = "Sources/Config/Info-macOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1601,7 +1708,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Sources/Info-macOS.plist";
+				INFOPLIST_FILE = "Sources/Config/Info-macOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1676,7 +1783,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Tests/Info-Test-macOS.plist";
+				INFOPLIST_FILE = "Tests/Config/Info-Test-macOS.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1743,7 +1850,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "Tests/Info-Test-macOS.plist";
+				INFOPLIST_FILE = "Tests/Config/Info-Test-macOS.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
