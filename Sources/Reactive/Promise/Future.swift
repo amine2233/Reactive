@@ -215,4 +215,108 @@ extension Future {
             })
         })
     }
+    
+    /**
+     Creates a new Future by applying a throw function to the successful result of this future.
+     If this future is completed with an error then the new future will also contain this error
+     
+     - Parameters:
+     - transform: function that will generate a new `Future` by passing the value of this Future
+     - transformError: function that will transform error handling to a error of result
+     - value: the value of this Future
+     
+     - Returns: New Future
+     */
+    public func map<U>(_ transform: @escaping (_ value: T) throws -> U, _ transformError: @escaping (Error) -> E) -> Future<U, E>{
+        return Future<U, E>(operation: { completion in
+            self.execute(onSuccess: { value in
+                do {
+                    completion(.success(try transform(value)))
+                } catch {
+                    completion(.failure(transformError(error)))
+                }
+            }, onFailure: { error in
+                completion(.failure(error))
+            })
+        })
+    }
+    
+    public func flatMap<U>(_ transform: @escaping (T) -> Future<U,E>) -> Future<U,E> {
+        return Future<U,E>(operation: { completion in
+            self.execute(completion: { result in
+                switch result {
+                case .success(let value):
+                    transform(value).execute(completion: completion)
+                case .failure(let failure):
+                    completion(.failure(failure))
+                }
+            })
+        })
+    }
+    
+    public func flatMap<U, F: Error>(_ transform: @escaping (T) throws-> Future<U,F>, _ transformError: @escaping (Error) -> F) -> Future<U,F> {
+        return Future<U,F>(operation: { completion in
+            self.execute(completion: { result in
+                do {
+                    try transform(result.value!).execute(completion: completion)
+                } catch {
+                    completion(.failure(transformError(error)))
+                }
+            })
+        })
+    }
+}
+
+extension Future {
+    
+    @discardableResult
+    public func done(on: DispatchQueue = DispatchQueue.global(), _ onSuccess: @escaping SuccessCompletion) -> Future<T,E> {
+        self.execute(completion: { (result) in
+            switch result {
+            case .success(let value):
+                on.async {
+                    onSuccess(value)
+                }
+            case .failure:
+                break
+            }
+        })
+        return self
+    }
+    
+    @discardableResult
+    public func `catch`(on: DispatchQueue = DispatchQueue.global(), _ onFailure: @escaping FailureCompletion) -> Future<T,E> {
+        self.execute(completion: { (result) in
+            switch result {
+            case .success:
+                break
+            case .failure(let failure):
+                on.async {
+                    onFailure(failure)
+                }
+            }
+        })
+        return self
+    }
+    
+    
+    /**
+    Chain two depending futures providing a function that gets the erro of this future as parameter
+    and then creates new one
+    
+    - Parameters:
+    - transform: function that will generate a new `Future` by passing the value of this Future
+    - value: the value of this Future
+    
+    - Returns: New chained Future
+    */
+    public func whenFailure<F: Error>(_ transform: @escaping (_ failure: E) -> Future<T,F>) -> Future<T,F> {
+        return Future<T,F>(operation: { completion in
+            self.execute(onSuccess: { value in
+                completion(.success(value))
+            }, onFailure: { error in
+                transform(error).execute(completion: completion)
+            })
+        })
+    }
 }
