@@ -152,6 +152,11 @@ public struct Future<T, E: Error> {
         }
     }
     
+    /**
+     Recover where error occure
+     
+     - Parameter block: the block catch error and transform it in value
+    */
     public func recover(_ block: @escaping (E) -> T) -> Future {
         return Future(operation: { completion in
             self.execute(completion: { result in
@@ -165,6 +170,12 @@ public struct Future<T, E: Error> {
         })
     }
     
+    /**
+     Creates a new future by filtering the value of the current future with a predicate.
+     
+     - Parameter whereFilter: the filter condition
+     - Returns: New ```Future```
+     */
     public func filter(_ whereFilter: @escaping (T) -> Bool ) -> Future {
         return Future(operation: { completion in
             self.execute(completion: { result in
@@ -180,6 +191,12 @@ public struct Future<T, E: Error> {
         })
     }
     
+    /**
+     Creates a new future by filtering the failure value of the current future with a predicate.
+     
+     - Parameter whereFilterError: the filter error condition
+     - Returns: New ```Future```
+     */
     public func filterError(_ whereFilterError: @escaping (E) -> Bool ) -> Future {
         return Future(operation: { completion in
             self.execute(completion: { result in
@@ -284,6 +301,13 @@ extension Future {
         })
     }
     
+    /**
+     Creates a new future by applying a function to the successful result of this future.
+     And returns the result of the function as the new future.
+     
+     - Parameter transform: transformation of new future
+     - Returns: New ```Future```
+     */
     public func flatMap<U>(_ transform: @escaping (T) -> Future<U,E>) -> Future<U,E> {
         return Future<U,E>(operation: { completion in
             self.execute(completion: { result in
@@ -297,6 +321,15 @@ extension Future {
         })
     }
     
+    /**
+     Creates a new future by applying a function to the successful result of this future.
+     And returns the result of the function as the new future.
+     
+     - Parameters:
+        - transform: transformation of new future
+        - transformError: transform error for new error
+     - Returns: New ```Future```
+     */
     public func flatMap<U, F: Error>(_ transform: @escaping (T) throws-> Future<U,F>, _ transformError: @escaping (Error) -> F) -> Future<U,F> {
         return Future<U,F>(operation: { completion in
             self.execute(completion: { result in
@@ -309,6 +342,12 @@ extension Future {
         })
     }
     
+    /**
+     Creates a new future that holds the tupple of results of `self` and `new future`.
+     
+     - Parameter future: the future will concat in tuple
+     - Returns: The new future with tuple
+    */
     public func zip<U>(_ future: Future<U,E>) -> Future<(T,U),E> {
         return self.flatMap { value -> Future<(T,U), E> in
             return future.map { futureValue in
