@@ -151,6 +151,49 @@ public struct Future<T, E: Error> {
             }
         }
     }
+    
+    public func recover(_ block: @escaping (E) -> T) -> Future {
+        return Future(operation: { completion in
+            self.execute(completion: { result in
+                switch result {
+                case .success(let value):
+                    completion(.success(value))
+                case .failure(let error):
+                    completion(Result.success(block(error)))
+                }
+            })
+        })
+    }
+    
+    public func filter(_ whereFilter: @escaping (T) -> Bool ) -> Future {
+        return Future(operation: { completion in
+            self.execute(completion: { result in
+                switch result {
+                case .success(let value):
+                    if whereFilter(value) {
+                        completion(result)
+                    }
+                case .failure:
+                    completion(result)
+                }
+            })
+        })
+    }
+    
+    public func filterError(_ whereFilterError: @escaping (E) -> Bool ) -> Future {
+        return Future(operation: { completion in
+            self.execute(completion: { result in
+                switch result {
+                case .success:
+                        completion(result)
+                case .failure(let error):
+                    if whereFilterError(error) {
+                        completion(result)
+                    }
+                }
+            })
+        })
+    }
 }
 
 extension Future {
@@ -265,38 +308,50 @@ extension Future {
             })
         })
     }
+    
+    public func zip<U>(_ future: Future<U,E>) -> Future<(T,U),E> {
+        return self.flatMap { value -> Future<(T,U), E> in
+            return future.map { futureValue in
+                return (value, futureValue)
+            }
+        }
+    }
 }
 
 extension Future {
     
     @discardableResult
-    public func done(on: DispatchQueue = DispatchQueue.global(), _ onSuccess: @escaping SuccessCompletion) -> Future<T,E> {
-        self.execute(completion: { (result) in
-            switch result {
-            case .success(let value):
-                on.async {
-                    onSuccess(value)
+    public func done(on: DispatchQueue = DispatchQueue.global(), _ onSuccess: @escaping SuccessCompletion) -> Future {
+        return Future(operation: { resolver in
+            self.execute(completion: { (result) in
+                switch result {
+                case .success(let value):
+                    on.async {
+                        onSuccess(value)
+                    }
+                case .failure:
+                    break
                 }
-            case .failure:
-                break
-            }
+                resolver(result)
+            })
         })
-        return self
     }
     
     @discardableResult
-    public func `catch`(on: DispatchQueue = DispatchQueue.global(), _ onFailure: @escaping FailureCompletion) -> Future<T,E> {
-        self.execute(completion: { (result) in
-            switch result {
-            case .success:
-                break
-            case .failure(let failure):
-                on.async {
-                    onFailure(failure)
+    public func `catch`(on: DispatchQueue = DispatchQueue.global(), _ onFailure: @escaping FailureCompletion) -> Future {
+        return Future(operation: { resolver in
+            self.execute(completion: { (result) in
+                switch result {
+                case .success:
+                    break
+                case .failure(let failure):
+                    on.async {
+                        onFailure(failure)
+                    }
                 }
-            }
+                resolver(result)
+            })
         })
-        return self
     }
     
     
