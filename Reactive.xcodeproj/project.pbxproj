@@ -224,6 +224,7 @@
 				6730EE4B225A061D00B245F9 /* ExecutionContext.swift */,
 				6730EE4C225A061D00B245F9 /* Promise */,
 				6730EE4F225A061D00B245F9 /* Observable.swift */,
+				6730EE4E225A061D00B245F9 /* ObservableExtension.swift */,
 				6730EE50225A061D00B245F9 /* Precondition.swift */,
 			);
 			path = Reactive;
@@ -233,7 +234,6 @@
 			isa = PBXGroup;
 			children = (
 				6730EE4D225A061D00B245F9 /* Future.swift */,
-				6730EE4E225A061D00B245F9 /* ObservableExtension.swift */,
 				6730EE9F225A06F900B245F9 /* ResultExtension.swift */,
 			);
 			path = Promise;
