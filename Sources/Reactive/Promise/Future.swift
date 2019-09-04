@@ -151,12 +151,13 @@ public struct Future<T, E: Error> {
             }
         }
     }
-    
+
     /**
      Recover where error occure
      
      - Parameter block: the block catch error and transform it in value
     */
+
     public func recover(_ block: @escaping (E) -> T) -> Future {
         return Future(operation: { completion in
             self.execute(completion: { result in
@@ -169,7 +170,7 @@ public struct Future<T, E: Error> {
             })
         })
     }
-    
+
     /**
      Creates a new future by filtering the value of the current future with a predicate.
      
@@ -202,7 +203,7 @@ public struct Future<T, E: Error> {
             self.execute(completion: { result in
                 switch result {
                 case .success:
-                        completion(result)
+                    completion(result)
                 case .failure(let error):
                     if whereFilterError(error) {
                         completion(result)
@@ -341,13 +342,13 @@ extension Future {
             })
         })
     }
-    
+
     /**
      Creates a new future that holds the tupple of results of `self` and `new future`.
-     
+
      - Parameter future: the future will concat in tuple
      - Returns: The new future with tuple
-    */
+     */
     public func zip<U>(_ future: Future<U,E>) -> Future<(T,U),E> {
         return self.flatMap { value -> Future<(T,U), E> in
             return future.map { futureValue in
@@ -375,7 +376,7 @@ extension Future {
             })
         })
     }
-    
+
     @discardableResult
     public func `catch`(on: DispatchQueue = DispatchQueue.global(), _ onFailure: @escaping FailureCompletion) -> Future {
         return Future(operation: { resolver in
@@ -392,7 +393,6 @@ extension Future {
             })
         })
     }
-    
     
     /**
     Chain two depending futures providing a function that gets the erro of this future as parameter

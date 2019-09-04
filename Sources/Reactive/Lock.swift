@@ -14,9 +14,12 @@ import Foundation
 
 internal class Lock {
     fileprivate var mutex = pthread_mutex_t()
+    fileprivate var attributes = pthread_mutexattr_t()
 
     init() {
-        pthread_mutex_init(&mutex, nil)
+        pthread_mutexattr_init(&attributes)
+        pthread_mutexattr_settype(&attributes, PTHREAD_MUTEX_RECURSIVE)
+        pthread_mutex_init(&mutex, &attributes)
     }
 
     deinit {

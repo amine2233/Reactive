@@ -8,10 +8,12 @@
 import Foundation
 
 public final class ObservableToken: Hashable {
+    private weak var observable: Unsubscribable?
     public let token: Int
 
-    internal init(token: Int) {
+    internal init(observable: Unsubscribable, token: Int) {
         self.token = token
+        self.observable = observable
     }
 
     public func hash(into hasher: inout Hasher) {
