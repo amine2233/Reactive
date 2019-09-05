@@ -101,7 +101,21 @@ public final class Observable<T>: ObservableProtocol, Unsubscribable {
         observable(self)
     }
 
-public init(options: ObservingOptions = [], observer: @escaping (T) -> Void) {
+    /**
+     Create a new observable from an observer completion,
+     
+     ```
+     let magicNumber = Observable<String> { value in
+        print(value)
+     }
+     ```
+     - Note: See observing options for various upgrades and awesome additions.
+     
+     - Parameters:
+     - options: the desired options.
+     - observer: callback.
+    */
+    public init(options: ObservingOptions = [], observer: @escaping (T) -> Void) {
         self.options = options
         self.subscribe(observer)
     }
