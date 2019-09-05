@@ -74,6 +74,10 @@
 		6730EEA4225A0C0D00B245F9 /* ResultExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE9F225A06F900B245F9 /* ResultExtension.swift */; };
 		6730EEA5225A0C0D00B245F9 /* ResultExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE9F225A06F900B245F9 /* ResultExtension.swift */; };
 		6730EEA6225A0C0F00B245F9 /* ResultExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6730EE9F225A06F900B245F9 /* ResultExtension.swift */; };
+		67457F86231E2FE000AD0263 /* CombineExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67457F85231E2FE000AD0263 /* CombineExtensions.swift */; };
+		67457F87231E2FE000AD0263 /* CombineExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67457F85231E2FE000AD0263 /* CombineExtensions.swift */; };
+		67457F88231E2FE000AD0263 /* CombineExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67457F85231E2FE000AD0263 /* CombineExtensions.swift */; };
+		67457F89231E2FE000AD0263 /* CombineExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67457F85231E2FE000AD0263 /* CombineExtensions.swift */; };
 		6772D0DF22687DAC00FB3278 /* FutureExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6772D0DD22687DAC00FB3278 /* FutureExtension.swift */; };
 		6772D0E022687DAC00FB3278 /* FutureExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6772D0DD22687DAC00FB3278 /* FutureExtension.swift */; };
 		6772D0E122687DAC00FB3278 /* FutureExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6772D0DD22687DAC00FB3278 /* FutureExtension.swift */; };
@@ -135,6 +139,7 @@
 		6730EE8B225A062C00B245F9 /* ThreadingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadingTests.swift; sourceTree = "<group>"; };
 		6730EE8C225A062C00B245F9 /* XCTest+Precondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTest+Precondition.swift"; sourceTree = "<group>"; };
 		6730EE9F225A06F900B245F9 /* ResultExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultExtension.swift; sourceTree = "<group>"; };
+		67457F85231E2FE000AD0263 /* CombineExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineExtensions.swift; sourceTree = "<group>"; };
 		6772D0DD22687DAC00FB3278 /* FutureExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FutureExtension.swift; sourceTree = "<group>"; };
 		6772D0DE22687DAC00FB3278 /* FutureTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FutureTest.swift; sourceTree = "<group>"; };
 		6777F20B21079F09005069F3 /* Reactive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Reactive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -223,6 +228,7 @@
 				6730EE4A225A061D00B245F9 /* ObservableToken.swift */,
 				6730EE4B225A061D00B245F9 /* ExecutionContext.swift */,
 				6730EE4C225A061D00B245F9 /* Promise */,
+				67457F84231E2FC100AD0263 /* Combine */,
 				6730EE4F225A061D00B245F9 /* Observable.swift */,
 				6730EE4E225A061D00B245F9 /* ObservableExtension.swift */,
 				6730EE50225A061D00B245F9 /* Precondition.swift */,
@@ -259,6 +265,14 @@
 				6730EE8C225A062C00B245F9 /* XCTest+Precondition.swift */,
 			);
 			path = ReactiveTests;
+			sourceTree = "<group>";
+		};
+		67457F84231E2FC100AD0263 /* Combine */ = {
+			isa = PBXGroup;
+			children = (
+				67457F85231E2FE000AD0263 /* CombineExtensions.swift */,
+			);
+			path = Combine;
 			sourceTree = "<group>";
 		};
 		6777F1FF21079EB8005069F3 = {
@@ -670,6 +684,7 @@
 				6730EE79225A061D00B245F9 /* ObservableExtension.swift in Sources */,
 				6730EE75225A061D00B245F9 /* Future.swift in Sources */,
 				6730EE69225A061D00B245F9 /* Timer.swift in Sources */,
+				67457F86231E2FE000AD0263 /* CombineExtensions.swift in Sources */,
 				6730EE71225A061D00B245F9 /* ExecutionContext.swift in Sources */,
 				6730EE65225A061D00B245F9 /* Lock.swift in Sources */,
 				6730EEA3225A0C0C00B245F9 /* ResultExtension.swift in Sources */,
@@ -699,6 +714,7 @@
 				6730EE7A225A061D00B245F9 /* ObservableExtension.swift in Sources */,
 				6730EE76225A061D00B245F9 /* Future.swift in Sources */,
 				6730EE6A225A061D00B245F9 /* Timer.swift in Sources */,
+				67457F87231E2FE000AD0263 /* CombineExtensions.swift in Sources */,
 				6730EE72225A061D00B245F9 /* ExecutionContext.swift in Sources */,
 				6730EE66225A061D00B245F9 /* Lock.swift in Sources */,
 				6730EEA4225A0C0D00B245F9 /* ResultExtension.swift in Sources */,
@@ -716,6 +732,7 @@
 				6730EE7B225A061D00B245F9 /* ObservableExtension.swift in Sources */,
 				6730EE77225A061D00B245F9 /* Future.swift in Sources */,
 				6730EE6B225A061D00B245F9 /* Timer.swift in Sources */,
+				67457F88231E2FE000AD0263 /* CombineExtensions.swift in Sources */,
 				6730EE73225A061D00B245F9 /* ExecutionContext.swift in Sources */,
 				6730EE67225A061D00B245F9 /* Lock.swift in Sources */,
 				6730EEA5225A0C0D00B245F9 /* ResultExtension.swift in Sources */,
@@ -745,6 +762,7 @@
 				6730EE7C225A061D00B245F9 /* ObservableExtension.swift in Sources */,
 				6730EE78225A061D00B245F9 /* Future.swift in Sources */,
 				6730EE6C225A061D00B245F9 /* Timer.swift in Sources */,
+				67457F89231E2FE000AD0263 /* CombineExtensions.swift in Sources */,
 				6730EE74225A061D00B245F9 /* ExecutionContext.swift in Sources */,
 				6730EE68225A061D00B245F9 /* Lock.swift in Sources */,
 				6730EEA6225A0C0F00B245F9 /* ResultExtension.swift in Sources */,

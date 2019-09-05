@@ -35,6 +35,8 @@ public protocol ObservableProtocol {
     associatedtype Element
 
     var value: Element? { get }
+    
+    func update(_ value: Element)
 }
 
 public typealias Observer<T> = (T) -> Void
