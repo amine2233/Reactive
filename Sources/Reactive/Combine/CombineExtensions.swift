@@ -36,6 +36,20 @@ extension Observable: Subject {
     }
 }
 
+//@available(iOS 13.0, *)
+//extension Observable: Subscriber {
+//    public typealias Input = T
+//
+//    public func receive(subscription: Subscription) {
+//
+//    }
+//
+//    public func receive(_ input: T) -> Subscribers.Demand {
+//
+//        self.update(input)
+//    }
+//}
+
 @available(iOS 13.0, *)
 extension Subscriber where Failure == Never {
     public func pushReactiveEvent(_ observer: Observable<Input>) {
@@ -56,9 +70,9 @@ extension Subscriber where Failure == Swift.Error {
 
 @available(iOS 13.0, *)
 extension Publisher {
-    
-    func asObservable() -> Observable<Output> {
-        let observable = Observable<Output>()
+
+    func asObservable(options: ObservingOptions = []) -> Observable<Output> {
+        let observable = Observable<Output>(options: options)
         _ = self.sink(receiveCompletion: { _ in
                         /// no-op: Observable don't complete and can't error out
                     },
@@ -73,13 +87,15 @@ extension Publisher {
 public protocol ObservableConvertible: Subject where Failure == Swift.Error {
     associatedtype Output
     
-    func asObservable() -> Observable<Output>
+    func asObservable(options: ObservingOptions) -> Observable<Output>
 }
 
 @available(iOS 13.0, *)
 extension ObservableConvertible {
-    public func asObservable() -> Observable<Output> {
-        return Observable<Output>()
+    public func asObservable(options: ObservingOptions = []) -> Observable<Output> {
+        return Observable<Output>(options: options) {[unowned self] (value: Output) in
+            self.send(value)
+        }
     }
 }
 
@@ -97,7 +113,7 @@ extension Observable {
         }
     }
     
-    func bind<S: ObservableConvertible>(to subject: S) -> ObservableToken where S.Output == Element {
+    public func bind<S: ObservableConvertible>(to subject: S) -> ObservableToken where S.Output == Element {
         subscribe(subject.asObservable())
     }
 }

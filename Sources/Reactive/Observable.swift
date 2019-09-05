@@ -81,6 +81,11 @@ public final class Observable<T>: ObservableProtocol, Unsubscribable {
             self.value = value
         }
     }
+    
+    public init(options: ObservingOptions = [], observer: @escaping (T) -> Void) {
+        self.options = options
+        self.subscribe(observer)
+    }
 
     /**
      Subscribe to the future values of this observable with a block. You can use the obtained
