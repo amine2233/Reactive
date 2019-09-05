@@ -79,6 +79,25 @@ public final class Observable<T>: ObservableProtocol, Unsubscribable {
             self.value = value
         }
     }
+    
+    /**
+     Create a new observable from an observable completion,
+     
+     ```
+     let magicNumber = Observable<Int> { observable in
+        observable.update(42)
+     }
+     ```
+     - Note: See observing options for various upgrades and awesome additions.
+     
+     - Parameters:
+     - options: the desired options.
+     - observable: Observable callback.
+    */
+    public init(options: ObservingOptions = [], observable: @escaping (Observable<T>) -> Void) {
+        self.options = options
+        observable(self)
+    }
 
     /**
      Subscribe to the future values of this observable with a block. You can use the obtained
