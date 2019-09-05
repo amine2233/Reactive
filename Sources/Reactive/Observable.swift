@@ -120,6 +120,12 @@ public final class Observable<T>: ObservableProtocol, Unsubscribable {
         }
     }
 
+    /// Update the inner state of an observable and notify all observers about the new value.
+    @discardableResult
+    public func update(_ observer: Observable<T>) -> ObservableToken {
+        return observer.subscribe(update)
+    }
+
     /// Unsubscribe from future updates with the token obtained from `subscribe`. This will also release the observer block.
     public func unsubscribe(_ token: ObservableToken) {
         mutex.lock {
@@ -174,6 +180,13 @@ extension Observable {
         return observable
     }
 
+    /**
+     Merge observable of the different same type:
+     
+     - Parameters:
+        - merge: Observable will merge value with the current value.
+     - Returns: A new `Observable` with tuple.
+    */
     public func merge<U>(_ merge: Observable<U>) -> Observable<(T, U)> {
         let signal = Observable<(T, U)>()
         self.subscribe { aleft in

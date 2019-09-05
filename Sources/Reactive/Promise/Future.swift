@@ -154,9 +154,10 @@ public struct Future<T, E: Error> {
 
     /**
      Recover where error occure
-
+     
      - Parameter block: the block catch error and transform it in value
-     */
+    */
+
     public func recover(_ block: @escaping (E) -> T) -> Future {
         return Future(operation: { completion in
             self.execute(completion: { result in
@@ -172,7 +173,7 @@ public struct Future<T, E: Error> {
 
     /**
      Creates a new future by filtering the value of the current future with a predicate.
-
+     
      - Parameter whereFilter: the filter condition
      - Returns: New ```Future```
      */
@@ -190,10 +191,10 @@ public struct Future<T, E: Error> {
             })
         })
     }
-
+    
     /**
      Creates a new future by filtering the failure value of the current future with a predicate.
-
+     
      - Parameter whereFilterError: the filter error condition
      - Returns: New ```Future```
      */
@@ -304,7 +305,7 @@ extension Future {
     /**
      Creates a new future by applying a function to the successful result of this future.
      And returns the result of the function as the new future.
-
+     
      - Parameter transform: transformation of new future
      - Returns: New ```Future```
      */
@@ -320,14 +321,14 @@ extension Future {
             })
         })
     }
-
+    
     /**
      Creates a new future by applying a function to the successful result of this future.
      And returns the result of the function as the new future.
-
+     
      - Parameters:
-     - transform: transformation of new future
-     - transformError: transform error for new error
+        - transform: transformation of new future
+        - transformError: transform error for new error
      - Returns: New ```Future```
      */
     public func flatMap<U, F: Error>(_ transform: @escaping (T) throws-> Future<U,F>, _ transformError: @escaping (Error) -> F) -> Future<U,F> {
