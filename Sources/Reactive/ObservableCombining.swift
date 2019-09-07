@@ -43,23 +43,23 @@ extension Observable {
     public func combineLatest<U,V>(with other: Observable<U>, combine: @escaping (T, U) -> V) -> Observable<V> {
         return Observable<V> { (observable: Observable<V>) in
             let mutex = Lock()
-            var _elements: (my: T?, other: U?)
-            func _onNext() {
-                if let element = _elements.my, let otherElement = _elements.other {
+            var elements: (my: T?, other: U?)
+            func onNext() {
+                if let element = elements.my, let otherElement = elements.other {
                     let combination = combine(element, otherElement)
                     observable.update(combination)
                 }
             }
             self.subscribe({ value in
                 mutex.lock {
-                    _elements.my = value
-                    _onNext()
+                    elements.my = value
+                    onNext()
                 }
             })
             other.subscribe({ value in
                 mutex.lock {
-                    _elements.other = value
-                    _onNext()
+                    elements.other = value
+                    onNext()
                 }
             })
         }
@@ -90,23 +90,23 @@ extension Observable where T: ResultProtocol {
     public func combineLatest<U: ResultProtocol, V: ResultProtocol>(with other: Observable<U>, combine: @escaping (T.Success, U.Success) -> V) -> Observable<V> where T.Failure == U.Failure, T.Failure == V.Failure {
         return Observable<V> { observable in
             let mutex = Lock()
-            var _elements: (my: T.Success?, other: U.Success?)
-            func _onNext() {
-                if let element = _elements.my, let otherElement = _elements.other {
+            var elements: (my: T.Success?, other: U.Success?)
+            func onNext() {
+                if let element = elements.my, let otherElement = elements.other {
                     let combination = combine(element, otherElement)
                     observable.update(combination)
                 }
             }
             self.subscribe { value in
                 mutex.lock {
-                    _elements.my = value.value
-                    _onNext()
+                    elements.my = value.value
+                    onNext()
                 }
             }
             other.subscribe { value in
                 mutex.lock {
-                    _elements.other = value.value
-                    _onNext()
+                    elements.other = value.value
+                    onNext()
                 }
             }
         }
