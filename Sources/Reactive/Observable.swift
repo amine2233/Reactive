@@ -35,7 +35,7 @@ public protocol ObservableProtocol {
     associatedtype Element
 
     var value: Element? { get }
-    
+
     func update(_ value: Element)
 }
 
@@ -81,7 +81,7 @@ public final class Observable<T>: ObservableProtocol, Unsubscribable {
             self.value = value
         }
     }
-    
+
     /**
      Create a new observable from an observable completion,
      

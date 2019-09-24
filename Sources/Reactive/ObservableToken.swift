@@ -19,7 +19,7 @@ public final class ObservableToken: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(token)
     }
-    
+
     public func unsubscribe() {
         observable?.unsubscribe(self)
     }

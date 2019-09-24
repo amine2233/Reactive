@@ -11,7 +11,7 @@ import Combine
 
 @available(iOS 13.0, *)
 extension Observable: Publisher {
-    
+
     public func receive<S: Subscriber>(subscriber: S) where Observable.Failure == S.Failure, Observable.Output == S.Input {
         subscriber.pushReactiveEvent(self)
     }
@@ -19,18 +19,18 @@ extension Observable: Publisher {
 
 @available(iOS 13.0, *)
 extension Observable: Subject {
-    
+
     public typealias Output = T
     public typealias Failure = Swift.Error
 
     public func send(_ value: T) {
         self.update(value)
     }
-    
+
     public func send(subscription: Subscription) {
         /// no-op: Observable don't complete and can't error out
     }
-    
+
     public func send(completion: Subscribers.Completion<Error>) {
         /// no-op: Observable don't complete and can't error out
     }
@@ -41,7 +41,6 @@ extension Observable: Subscriber {
     public func receive(completion: Subscribers.Completion<Error>) {
         /// no-op: Observable don't complete and can't error out
     }
-    
 
     public func receive(subscription: Subscription) {
         subscription.request(.unlimited)
@@ -72,48 +71,42 @@ extension Subscriber where Failure == Swift.Error {
 }
 
 @available(iOS 13.0, *)
-extension Publisher {
-
-    func asObservable(options: ObservingOptions = []) -> Observable<Output> {
-        let observable = Observable<Output>(options: options)
-        self.receive(subscriber: Subscriber)
-        return observable
-    }
-}
-
-@available(iOS 13.0, *)
-public protocol ObservableConvertible: Subject where Failure == Swift.Error {
+public protocol ObservableConvertible: Subject {
     associatedtype Output
-    
+
     func asObservable(options: ObservingOptions) -> Observable<Output>
 }
 
 @available(iOS 13.0, *)
 extension ObservableConvertible {
     public func asObservable(options: ObservingOptions = []) -> Observable<Output> {
-        return Observable<Output>(options: options) {[unowned self] (value: Output) in
-            self.send(value)
-        }
+        let observable = Observable<Output>(options: options)
+        _ = self.sink(receiveCompletion: { _ in
+            //
+        }, receiveValue: { value in
+            observable.update(value)
+        })
+        return observable
     }
 }
 
 @available(iOS 13.0, *)
-extension PassthroughSubject: ObservableConvertible where Failure == Swift.Error {}
+extension PassthroughSubject: ObservableConvertible {}
 @available(iOS 13.0, *)
-extension CurrentValueSubject: ObservableConvertible where Failure == Swift.Error {}
+extension CurrentValueSubject: ObservableConvertible {}
 
 @available(iOS 13.0, *)
 extension Observable {
-    
-    public func subscribe<T: ObservableProtocol>(_ observable: T) -> ObservableToken where Element == T.Element {
-        subscribe { value in
-            observable.update(value)
-        }
-    }
-    
-    public func bind<S: ObservableConvertible>(to subject: S) -> ObservableToken where S.Output == Element {
-        subscribe(subject.asObservable())
-    }
+
+//    public func subscribe<T: ObservableProtocol>(_ observable: T) -> ObservableToken where Element == T.Element {
+//        subscribe { value in
+//            observable.update(value)
+//        }
+//    }
+//
+//    public func bind<S: ObservableConvertible>(to subject: S) -> ObservableToken where S.Output == Element {
+//        subscribe(subject.asObservable())
+//    }
 }
 
 @available(iOS 13.0, *)

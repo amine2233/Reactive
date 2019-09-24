@@ -14,12 +14,23 @@ import Combine
 @available(iOS 13.0, *)
 class CombineTests: XCTestCase {
 
+    enum TestError: Swift.Error {
+        case test
+    }
+
+    var token: ObservableToken?
+    var observer: Observable<String>?
+    var subscriptions = Set<AnyCancellable>()
+
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        if let token = token {
+            observer?.unsubscribe(token)
+        }
+        subscriptions.forEach { $0.cancel() }
     }
 
     func testObservableCombine() {
@@ -27,55 +38,54 @@ class CombineTests: XCTestCase {
         var expectedValue = ""
 
         let observable = Observable<String>(options: .Once)
-        _ = observable.sink(receiveCompletion: { _ in
-        }) { value in
-            expectedValue = value
-            expectation.fulfill()
-        }
-        
+        observable.sink(receiveCompletion: { _ in
+                            // niet
+                        },
+                        receiveValue: { value in
+                            expectedValue = value
+                            expectation.fulfill()
+                        })
+                        .store(in: &subscriptions)
+
         observable.send("Test")
-        
+
         waitForExpectations(timeout: 5, handler: nil)
         XCTAssertEqual(expectedValue, "Test")
     }
-    
+
     func testCombineCurrentValueSubjectObservable() {
         let expectation = self.expectation(description: "Test combine observable")
         var expectedValue = ""
-        
+
         let publisher = CurrentValueSubject<String, Never>("Publish test")
-        _ = publisher.asObservable().subscribe({ value in
-            expectedValue = value
-            expectation.fulfill()
-        })
-        
-        waitForExpectations(timeout: 10, handler: nil)
-        XCTAssertEqual(expectedValue, "Publish test")
-    }
-    
-    func testCombinePassthroughSubjectObservable() {
-        let expectation = self.expectation(description: "Test combine observable")
-        var expectedValue = ""
-        
-        let publisher = PassthroughSubject<String, Never>()
-        let observer = publisher.asObservable()
-        let token = observer.subscribe({ value in
-            expectedValue = value
-            expectation.fulfill()
-        })
-        
-        publisher.send("Publish test")
-        observer.unsubscribe(token)
-        
+        publisher
+            .asObservable()
+            .subscribe({ value in
+                expectedValue = value
+                expectation.fulfill()
+            })
+            .store(in: &subscriptions)
+
         waitForExpectations(timeout: 5, handler: nil)
         XCTAssertEqual(expectedValue, "Publish test")
     }
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+    func testCombinePassthroughSubjectObservable() {
+        let expectation = self.expectation(description: "Test combine observable")
+        var expectedValue = ""
 
+        let publisher = PassthroughSubject<String, Never>()
+        self.observer = publisher
+            .asObservable()
+
+        self.token = self.observer!.subscribe({ value in
+            expectedValue = value
+            expectation.fulfill()
+        })
+
+        publisher.send("Publish test")
+
+        waitForExpectations(timeout: 10, handler: nil)
+        XCTAssertEqual(expectedValue, "Publish test")
+    }
 }
