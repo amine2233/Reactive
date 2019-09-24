@@ -58,11 +58,14 @@ class CombineTests: XCTestCase {
         var expectedValue = ""
         
         let publisher = PassthroughSubject<String, Never>()
-        _ = publisher.asObservable().subscribe({ value in
+        let observer = publisher.asObservable()
+        let token = observer.subscribe({ value in
             expectedValue = value
             expectation.fulfill()
         })
+        
         publisher.send("Publish test")
+        observer.unsubscribe(token)
         
         waitForExpectations(timeout: 5, handler: nil)
         XCTAssertEqual(expectedValue, "Publish test")

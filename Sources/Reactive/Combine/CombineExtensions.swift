@@ -36,19 +36,22 @@ extension Observable: Subject {
     }
 }
 
-//@available(iOS 13.0, *)
-//extension Observable: Subscriber {
-//    public typealias Input = T
-//
-//    public func receive(subscription: Subscription) {
-//
-//    }
-//
-//    public func receive(_ input: T) -> Subscribers.Demand {
-//
-//        self.update(input)
-//    }
-//}
+@available(iOS 13.0, *)
+extension Observable: Subscriber {
+    public func receive(completion: Subscribers.Completion<Error>) {
+        /// no-op: Observable don't complete and can't error out
+    }
+    
+
+    public func receive(subscription: Subscription) {
+        subscription.request(.unlimited)
+    }
+
+    public func receive(_ input: T) -> Subscribers.Demand {
+        self.update(input)
+        return .unlimited
+    }
+}
 
 @available(iOS 13.0, *)
 extension Subscriber where Failure == Never {
@@ -73,12 +76,7 @@ extension Publisher {
 
     func asObservable(options: ObservingOptions = []) -> Observable<Output> {
         let observable = Observable<Output>(options: options)
-        _ = self.sink(receiveCompletion: { _ in
-                        /// no-op: Observable don't complete and can't error out
-                    },
-                    receiveValue: { value in
-                        observable.update(value)
-                    })
+        self.receive(subscriber: Subscriber)
         return observable
     }
 }
@@ -115,6 +113,13 @@ extension Observable {
     
     public func bind<S: ObservableConvertible>(to subject: S) -> ObservableToken where S.Output == Element {
         subscribe(subject.asObservable())
+    }
+}
+
+@available(iOS 13.0, *)
+extension ObservableToken: Cancellable {
+    public func cancel() {
+        self.unsubscribe()
     }
 }
 

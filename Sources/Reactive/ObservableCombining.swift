@@ -17,7 +17,7 @@ extension Observable {
      - Returns: The new ```Observable```
     */
     public func combine(with other: Observable<T>) -> Observable<T> {
-        return Observable { observable in
+        return Observable(observable: { observable in
             let mutex = Lock()
             self.subscribe({ value in
                 mutex.lock {
@@ -29,7 +29,7 @@ extension Observable {
                     observable.update(value)
                 }
             })
-        }
+        })
     }
     
     /**
@@ -88,7 +88,7 @@ extension Observable where T: ResultProtocol {
      - Returns: The new ```Observable```
      */
     public func combineLatest<U: ResultProtocol, V: ResultProtocol>(with other: Observable<U>, combine: @escaping (T.Success, U.Success) -> V) -> Observable<V> where T.Failure == U.Failure, T.Failure == V.Failure {
-        return Observable<V> { observable in
+        return Observable<V>(observable: { observable in
             let mutex = Lock()
             var _elements: (my: T.Success?, other: U.Success?)
             func _onNext() {
@@ -109,6 +109,6 @@ extension Observable where T: ResultProtocol {
                     _onNext()
                 }
             }
-        }
+        })
     }
 }
