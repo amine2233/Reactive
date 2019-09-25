@@ -154,6 +154,70 @@ class ObservableTests: XCTestCase {
         XCTAssert(results == [2, 4, 6])
     }
 
+    func testCreateObservebaleWithObserverCallback() {
+
+        let expectation = self.expectation(description: "Create an Observable with observer callback")
+        var expectationValue = ""
+        let test = "run this test"
+
+        let observer = Observable<String>(options: [], observer: { value in
+            expectationValue = value
+            expectation.fulfill()
+        })
+
+        observer.update(test)
+
+        waitForExpectations(timeout: 5, handler: nil)
+        XCTAssertEqual(test, expectationValue, "future should have a correct value")
+    }
+
+    func testCreateObservableWithAnOtherObservablelistning() {
+
+        let expectation = self.expectation(description: "Create an Observable with an observable callback")
+        let test = "run this test"
+
+        let observer = Observable<String>(options: [], observable: { observable in
+            observable.update(test)
+            expectation.fulfill()
+        })
+
+        waitForExpectations(timeout: 5, handler: nil)
+        XCTAssertEqual(test, observer.value, "future should have a correct value")
+    }
+
+    func testUpdateObservableWithAnOtherObservable() {
+
+        let expectation = self.expectation(description: "Update observable with an other observable")
+        var expectationValue = ""
+        let test = "run this test"
+
+        let observable1 = Observable<String>()
+        let observable2 = Observable<String>()
+
+        observable2.subscribe { value in
+            expectationValue = value
+            expectation.fulfill()
+        }
+
+        observable2.update(with: observable1)
+        observable1.update(test)
+
+        waitForExpectations(timeout: 5, handler: nil)
+        XCTAssertEqual(test, expectationValue, "future should have a correct value")
+    }
+
+    func testUnsubscribeObserver() {
+        let observable = Observable<String>()
+        var count = 0
+        let token = observable.subscribe { _ in
+            count += 1
+        }
+        observable.update("Hello")
+        token.unsubscribe()
+        observable.update("Hello")
+        XCTAssertEqual(count, 1)
+    }
+
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {

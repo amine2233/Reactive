@@ -143,6 +143,20 @@ public final class Observable<T>: ObservableProtocol, Unsubscribable {
         return token
     }
 
+    /**
+     Subscribe an observable object `ObservableProtocol`. when change ocure the observable value will update.
+     You can use the obtained `ObserverToken` to manually unsubscribe from future updates via `unsubscribe`.
+
+    - Note: This block will be retained by the observable until it is deallocated or the corresponding `unsubscribe`
+    function is called.
+    */
+    @discardableResult
+    public func subscribe<T: ObservableProtocol>(_ observable: T) -> ObservableToken where Element == T.Element {
+        subscribe { value in
+            observable.update(value)
+        }
+    }
+
     /// Update the inner state of an observable and notify all observers about the new value.
     public func update(_ value: T) {
         mutex.lock {
@@ -160,7 +174,7 @@ public final class Observable<T>: ObservableProtocol, Unsubscribable {
 
     /// Update the inner state of an observable and notify all observers about the new value.
     @discardableResult
-    public func update(_ observer: Observable<T>) -> ObservableToken {
+    public func update(with observer: Observable<T>) -> ObservableToken {
         return observer.subscribe(update)
     }
 
