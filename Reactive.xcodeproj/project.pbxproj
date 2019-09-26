@@ -89,6 +89,15 @@
 		6777F2732107A20D005069F3 /* Reactive.h in Headers */ = {isa = PBXBuildFile; fileRef = 6777F2712107A20D005069F3 /* Reactive.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6777F2742107A20D005069F3 /* Reactive.h in Headers */ = {isa = PBXBuildFile; fileRef = 6777F2712107A20D005069F3 /* Reactive.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6777F2752107A20D005069F3 /* Reactive.h in Headers */ = {isa = PBXBuildFile; fileRef = 6777F2712107A20D005069F3 /* Reactive.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		67DDB75A233C796000D9D00A /* TimerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DDB759233C796000D9D00A /* TimerTest.swift */; };
+		67DDB75B233C796400D9D00A /* TimerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DDB759233C796000D9D00A /* TimerTest.swift */; };
+		67DDB75C233C796500D9D00A /* TimerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DDB759233C796000D9D00A /* TimerTest.swift */; };
+		67DDB75E233C841A00D9D00A /* ExecutionContextTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DDB75D233C841A00D9D00A /* ExecutionContextTest.swift */; };
+		67DDB75F233C841A00D9D00A /* ExecutionContextTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DDB75D233C841A00D9D00A /* ExecutionContextTest.swift */; };
+		67DDB760233C841A00D9D00A /* ExecutionContextTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DDB75D233C841A00D9D00A /* ExecutionContextTest.swift */; };
+		67DDB762233C842E00D9D00A /* ThreadingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DDB761233C842E00D9D00A /* ThreadingTest.swift */; };
+		67DDB763233C842E00D9D00A /* ThreadingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DDB761233C842E00D9D00A /* ThreadingTest.swift */; };
+		67DDB764233C842E00D9D00A /* ThreadingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DDB761233C842E00D9D00A /* ThreadingTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +158,9 @@
 		6777F25121079F43005069F3 /* Reactive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Reactive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6777F25921079F43005069F3 /* ReactiveTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6777F2712107A20D005069F3 /* Reactive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reactive.h; sourceTree = "<group>"; };
+		67DDB759233C796000D9D00A /* TimerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerTest.swift; sourceTree = "<group>"; };
+		67DDB75D233C841A00D9D00A /* ExecutionContextTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecutionContextTest.swift; sourceTree = "<group>"; };
+		67DDB761233C842E00D9D00A /* ThreadingTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadingTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +275,9 @@
 				6730EE8A225A062C00B245F9 /* ObservableTests.swift */,
 				6730EE8B225A062C00B245F9 /* ThreadingTests.swift */,
 				6730EE8C225A062C00B245F9 /* XCTest+Precondition.swift */,
+				67DDB759233C796000D9D00A /* TimerTest.swift */,
+				67DDB75D233C841A00D9D00A /* ExecutionContextTest.swift */,
+				67DDB761233C842E00D9D00A /* ThreadingTest.swift */,
 			);
 			path = ReactiveTests;
 			sourceTree = "<group>";
@@ -692,7 +707,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6772D0DF22687DAC00FB3278 /* FutureExtension.swift in Sources */,
+				67DDB75A233C796000D9D00A /* TimerTest.swift in Sources */,
+				67DDB75E233C841A00D9D00A /* ExecutionContextTest.swift in Sources */,
 				6772D0E222687DAC00FB3278 /* FutureTest.swift in Sources */,
+				67DDB762233C842E00D9D00A /* ThreadingTest.swift in Sources */,
 				6730EE9C225A062C00B245F9 /* XCTest+Precondition.swift in Sources */,
 				6730EE99225A062C00B245F9 /* ThreadingTests.swift in Sources */,
 				6730EE96225A062C00B245F9 /* ObservableTests.swift in Sources */,
@@ -738,7 +756,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6772D0E022687DAC00FB3278 /* FutureExtension.swift in Sources */,
+				67DDB75B233C796400D9D00A /* TimerTest.swift in Sources */,
+				67DDB75F233C841A00D9D00A /* ExecutionContextTest.swift in Sources */,
 				6772D0E322687DAC00FB3278 /* FutureTest.swift in Sources */,
+				67DDB763233C842E00D9D00A /* ThreadingTest.swift in Sources */,
 				6730EE9D225A062C00B245F9 /* XCTest+Precondition.swift in Sources */,
 				6730EE9A225A062C00B245F9 /* ThreadingTests.swift in Sources */,
 				6730EE97225A062C00B245F9 /* ObservableTests.swift in Sources */,
@@ -767,7 +788,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6772D0E122687DAC00FB3278 /* FutureExtension.swift in Sources */,
+				67DDB75C233C796500D9D00A /* TimerTest.swift in Sources */,
+				67DDB760233C841A00D9D00A /* ExecutionContextTest.swift in Sources */,
 				6772D0E422687DAC00FB3278 /* FutureTest.swift in Sources */,
+				67DDB764233C842E00D9D00A /* ThreadingTest.swift in Sources */,
 				6730EE9E225A062C00B245F9 /* XCTest+Precondition.swift in Sources */,
 				6730EE9B225A062C00B245F9 /* ThreadingTests.swift in Sources */,
 				6730EE98225A062C00B245F9 /* ObservableTests.swift in Sources */,

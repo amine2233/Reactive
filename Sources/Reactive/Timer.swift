@@ -23,7 +23,7 @@ extension Observable {
         }
         let timestamp = timeout.map { DispatchTime.now() + $0 } ?? DispatchTime.distantFuture
         if group.wait(timeout: timestamp) != .success {
-            throw NSError(domain: "Timeout error", code: 0, userInfo: nil)
+            throw ObservableError.timeout
         }
         return value
     }

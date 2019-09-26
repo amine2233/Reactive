@@ -63,6 +63,11 @@ public final class Observable<T>: ObservableProtocol, Unsubscribable {
     public let options: ObservingOptions
     fileprivate let mutex = Lock()
 
+    public enum ObservableError: Error {
+        case timeout
+        case none
+    }
+
     /// Create a new observable without a value and the desired options. You can supply a value later via `update`.
     public init(options: ObservingOptions = []) {
         self.options = options
@@ -266,5 +271,20 @@ extension Observable {
             }
         }
         return observable
+    }
+}
+
+extension Observable.ObservableError: Equatable {
+
+    public static func == (lhs: Observable.ObservableError, rhs: Observable.ObservableError) -> Bool {
+        switch (lhs, rhs) {
+        case (.timeout, .timeout):
+            return true
+        case (.none, .none):
+            return true
+        case (.timeout, _),
+             (.none, _):
+            return false
+        }
     }
 }
