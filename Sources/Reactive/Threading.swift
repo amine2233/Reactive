@@ -31,9 +31,8 @@ public final class Threading {
 
     /// Transform the signal to a global background queue with priority default
     public static func background<T>(_ block: T, completion: @escaping (T) -> Void) {
-        DispatchQueue.global(qos: .background).async {
-            completion(block)
-        }
+        let dispatchQueue = DispatchQueue.global(qos: .background)
+        queue(dispatchQueue)(block, completion)
     }
 }
 

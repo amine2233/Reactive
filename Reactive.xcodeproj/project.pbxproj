@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6725FFA9233DC555005DDEDC /* ObservableCombiningTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6725FFA8233DC555005DDEDC /* ObservableCombiningTest.swift */; };
+		6725FFAA233DC555005DDEDC /* ObservableCombiningTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6725FFA8233DC555005DDEDC /* ObservableCombiningTest.swift */; };
+		6725FFAB233DC555005DDEDC /* ObservableCombiningTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6725FFA8233DC555005DDEDC /* ObservableCombiningTest.swift */; };
+		6725FFAD233DCCCF005DDEDC /* ObservableExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6725FFAC233DCCCF005DDEDC /* ObservableExtensionTest.swift */; };
+		6725FFAE233DCCCF005DDEDC /* ObservableExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6725FFAC233DCCCF005DDEDC /* ObservableExtensionTest.swift */; };
+		6725FFAF233DCCCF005DDEDC /* ObservableExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6725FFAC233DCCCF005DDEDC /* ObservableExtensionTest.swift */; };
 		6730EE52225A061D00B245F9 /* Info-iOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6730EE42225A061D00B245F9 /* Info-iOS.plist */; };
 		6730EE53225A061D00B245F9 /* Info-iOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6730EE42225A061D00B245F9 /* Info-iOS.plist */; };
 		6730EE54225A061D00B245F9 /* Info-iOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6730EE42225A061D00B245F9 /* Info-iOS.plist */; };
@@ -125,6 +131,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6725FFA8233DC555005DDEDC /* ObservableCombiningTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableCombiningTest.swift; sourceTree = "<group>"; };
+		6725FFAC233DCCCF005DDEDC /* ObservableExtensionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableExtensionTest.swift; sourceTree = "<group>"; };
 		672B85CA2109954900790E50 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = SOURCE_ROOT; };
 		6730EE42225A061D00B245F9 /* Info-iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
 		6730EE43225A061D00B245F9 /* Info-watchOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-watchOS.plist"; sourceTree = "<group>"; };
@@ -278,6 +286,8 @@
 				67DDB759233C796000D9D00A /* TimerTest.swift */,
 				67DDB75D233C841A00D9D00A /* ExecutionContextTest.swift */,
 				67DDB761233C842E00D9D00A /* ThreadingTest.swift */,
+				6725FFA8233DC555005DDEDC /* ObservableCombiningTest.swift */,
+				6725FFAC233DCCCF005DDEDC /* ObservableExtensionTest.swift */,
 			);
 			path = ReactiveTests;
 			sourceTree = "<group>";
@@ -712,7 +722,9 @@
 				6772D0E222687DAC00FB3278 /* FutureTest.swift in Sources */,
 				67DDB762233C842E00D9D00A /* ThreadingTest.swift in Sources */,
 				6730EE9C225A062C00B245F9 /* XCTest+Precondition.swift in Sources */,
+				6725FFAD233DCCCF005DDEDC /* ObservableExtensionTest.swift in Sources */,
 				6730EE99225A062C00B245F9 /* ThreadingTests.swift in Sources */,
+				6725FFA9233DC555005DDEDC /* ObservableCombiningTest.swift in Sources */,
 				6730EE96225A062C00B245F9 /* ObservableTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -761,7 +773,9 @@
 				6772D0E322687DAC00FB3278 /* FutureTest.swift in Sources */,
 				67DDB763233C842E00D9D00A /* ThreadingTest.swift in Sources */,
 				6730EE9D225A062C00B245F9 /* XCTest+Precondition.swift in Sources */,
+				6725FFAE233DCCCF005DDEDC /* ObservableExtensionTest.swift in Sources */,
 				6730EE9A225A062C00B245F9 /* ThreadingTests.swift in Sources */,
+				6725FFAA233DC555005DDEDC /* ObservableCombiningTest.swift in Sources */,
 				6730EE97225A062C00B245F9 /* ObservableTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -793,7 +807,9 @@
 				6772D0E422687DAC00FB3278 /* FutureTest.swift in Sources */,
 				67DDB764233C842E00D9D00A /* ThreadingTest.swift in Sources */,
 				6730EE9E225A062C00B245F9 /* XCTest+Precondition.swift in Sources */,
+				6725FFAF233DCCCF005DDEDC /* ObservableExtensionTest.swift in Sources */,
 				6730EE9B225A062C00B245F9 /* ThreadingTests.swift in Sources */,
+				6725FFAB233DC555005DDEDC /* ObservableCombiningTest.swift in Sources */,
 				6730EE98225A062C00B245F9 /* ObservableTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
