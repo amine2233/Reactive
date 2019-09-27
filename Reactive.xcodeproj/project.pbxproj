@@ -13,6 +13,12 @@
 		6725FFAD233DCCCF005DDEDC /* ObservableExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6725FFAC233DCCCF005DDEDC /* ObservableExtensionTest.swift */; };
 		6725FFAE233DCCCF005DDEDC /* ObservableExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6725FFAC233DCCCF005DDEDC /* ObservableExtensionTest.swift */; };
 		6725FFAF233DCCCF005DDEDC /* ObservableExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6725FFAC233DCCCF005DDEDC /* ObservableExtensionTest.swift */; };
+		6725FFB0233DDEF0005DDEDC /* ObservableCombining.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676F25952320FF8E001D2CB5 /* ObservableCombining.swift */; };
+		6725FFB1233DDEF1005DDEDC /* ObservableCombining.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676F25952320FF8E001D2CB5 /* ObservableCombining.swift */; };
+		6725FFB2233DDEF1005DDEDC /* ObservableCombining.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676F25952320FF8E001D2CB5 /* ObservableCombining.swift */; };
+		6725FFB3233DDF03005DDEDC /* FutureExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674780BA2339C310009870AE /* FutureExtension.swift */; };
+		6725FFB4233DDF04005DDEDC /* FutureExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674780BA2339C310009870AE /* FutureExtension.swift */; };
+		6725FFB5233DDF04005DDEDC /* FutureExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674780BA2339C310009870AE /* FutureExtension.swift */; };
 		6730EE52225A061D00B245F9 /* Info-iOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6730EE42225A061D00B245F9 /* Info-iOS.plist */; };
 		6730EE53225A061D00B245F9 /* Info-iOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6730EE42225A061D00B245F9 /* Info-iOS.plist */; };
 		6730EE54225A061D00B245F9 /* Info-iOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6730EE42225A061D00B245F9 /* Info-iOS.plist */; };
@@ -737,9 +743,11 @@
 				6730EE7A225A061D00B245F9 /* ObservableExtension.swift in Sources */,
 				6730EE76225A061D00B245F9 /* Future.swift in Sources */,
 				6730EE6A225A061D00B245F9 /* Timer.swift in Sources */,
+				6725FFB0233DDEF0005DDEDC /* ObservableCombining.swift in Sources */,
 				6730EE72225A061D00B245F9 /* ExecutionContext.swift in Sources */,
 				6730EE66225A061D00B245F9 /* Lock.swift in Sources */,
 				6730EEA4225A0C0D00B245F9 /* ResultExtension.swift in Sources */,
+				6725FFB3233DDF03005DDEDC /* FutureExtension.swift in Sources */,
 				6730EE6E225A061D00B245F9 /* ObservableToken.swift in Sources */,
 				6730EE82225A061D00B245F9 /* Precondition.swift in Sources */,
 				6730EE62225A061D00B245F9 /* Threading.swift in Sources */,
@@ -754,9 +762,11 @@
 				6730EE7B225A061D00B245F9 /* ObservableExtension.swift in Sources */,
 				6730EE77225A061D00B245F9 /* Future.swift in Sources */,
 				6730EE6B225A061D00B245F9 /* Timer.swift in Sources */,
+				6725FFB1233DDEF1005DDEDC /* ObservableCombining.swift in Sources */,
 				6730EE73225A061D00B245F9 /* ExecutionContext.swift in Sources */,
 				6730EE67225A061D00B245F9 /* Lock.swift in Sources */,
 				6730EEA5225A0C0D00B245F9 /* ResultExtension.swift in Sources */,
+				6725FFB4233DDF04005DDEDC /* FutureExtension.swift in Sources */,
 				6730EE6F225A061D00B245F9 /* ObservableToken.swift in Sources */,
 				6730EE83225A061D00B245F9 /* Precondition.swift in Sources */,
 				6730EE63225A061D00B245F9 /* Threading.swift in Sources */,
@@ -788,9 +798,11 @@
 				6730EE7C225A061D00B245F9 /* ObservableExtension.swift in Sources */,
 				6730EE78225A061D00B245F9 /* Future.swift in Sources */,
 				6730EE6C225A061D00B245F9 /* Timer.swift in Sources */,
+				6725FFB2233DDEF1005DDEDC /* ObservableCombining.swift in Sources */,
 				6730EE74225A061D00B245F9 /* ExecutionContext.swift in Sources */,
 				6730EE68225A061D00B245F9 /* Lock.swift in Sources */,
 				6730EEA6225A0C0F00B245F9 /* ResultExtension.swift in Sources */,
+				6725FFB5233DDF04005DDEDC /* FutureExtension.swift in Sources */,
 				6730EE70225A061D00B245F9 /* ObservableToken.swift in Sources */,
 				6730EE84225A061D00B245F9 /* Precondition.swift in Sources */,
 				6730EE64225A061D00B245F9 /* Threading.swift in Sources */,
