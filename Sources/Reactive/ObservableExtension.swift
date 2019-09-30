@@ -86,7 +86,7 @@ extension Observable where T: ResultProtocol {
 
     /// Only subscribe to errors.
     @discardableResult
-    public func error(_ block: @escaping (Error) -> Void) -> Observable<T> {
+    public func error(_ block: @escaping (T.Failure) -> Void) -> Observable<T> {
         subscribe { result in
             if let error = result.error {
                 block(error)

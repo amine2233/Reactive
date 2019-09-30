@@ -25,6 +25,14 @@ public protocol ResultProtocol {
 
 extension Result: ResultProtocol where Failure: Error {
 
+    public init(value: Success) {
+        self = .success(value)
+    }
+
+    public init(error: Failure) {
+        self = .failure(error)
+    }
+
     public var value: Success? {
         switch self {
         case let .success(value):
@@ -47,7 +55,7 @@ extension Result: ResultProtocol where Failure: Error {
     public var result: Result<Success, Failure> {
         return self
     }
-    
+
     public var isSuccess: Bool {
         switch self {
         case .success:
@@ -56,7 +64,7 @@ extension Result: ResultProtocol where Failure: Error {
             return false
         }
     }
-    
+
     public var isFailure: Bool {
         switch self {
         case .failure:
@@ -84,7 +92,7 @@ extension Result: ResultProtocol where Failure: Error {
     public func mapError<NewFailure>(_ transform: (Failure) -> NewFailure) -> Result<Success, NewFailure> where NewFailure: Error {
         return flatMapError { .failure(transform($0)) }
     }
-    
+
     /// Returns the result of applying `transform` with optional value to `Success`es’ values,
     /// or re-wrapping `Failure`’s errors.
     public func compactMap<U>(_ transform: (Success?) -> U) -> Result<U, Failure> {
@@ -93,7 +101,7 @@ extension Result: ResultProtocol where Failure: Error {
         case let .failure(error): return .failure(error)
         }
     }
-    
+
     /// Returns a new Result by mapping `Failure`'s with optional value to `transform`,
     /// or re-wrapping `Success`’s errors.
     public func compactMapError<E: Swift.Error>(_ transform: (Failure?) -> E) -> Result<Success, E> {
@@ -102,7 +110,7 @@ extension Result: ResultProtocol where Failure: Error {
         case let .failure(error): return .failure(transform(error))
         }
     }
-    
+
     /// Returns a new Result by mapping `Success`es’ values using `success`, and by mapping `Failure`'s values using `failure`.
     public func bimap<U, E>(success: (Success) -> U, failure: (Failure) -> E) -> Result<U, E> {
         switch self {
@@ -115,7 +123,7 @@ extension Result: ResultProtocol where Failure: Error {
 // MARK: Result work with throws
 
 extension Result {
-    
+
     /// Return value or catch error
     public func convertThrow() throws -> Success {
         switch self {

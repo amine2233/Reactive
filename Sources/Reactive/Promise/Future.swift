@@ -185,13 +185,13 @@ public struct Future<T, E: Error> {
                     if whereFilter(value) {
                         completion(result)
                     }
-                case .failure:
-                    completion(result)
+                case .failure(let failure):
+                    completion(.failure(failure))
                 }
             })
         })
     }
-    
+
     /**
      Creates a new future by filtering the failure value of the current future with a predicate.
      
@@ -202,8 +202,8 @@ public struct Future<T, E: Error> {
         return Future(operation: { completion in
             self.execute(completion: { result in
                 switch result {
-                case .success:
-                    completion(result)
+                case .success(let value):
+                    completion(.success(value))
                 case .failure(let error):
                     if whereFilterError(error) {
                         completion(result)
@@ -276,7 +276,7 @@ extension Future {
             })
         })
     }
-    
+
     /**
      Creates a new Future by applying a throw function to the successful result of this future.
      If this future is completed with an error then the new future will also contain this error
@@ -288,7 +288,8 @@ extension Future {
      
      - Returns: New Future
      */
-    public func map<U>(_ transform: @escaping (_ value: T) throws -> U, _ transformError: @escaping (Error) -> E) -> Future<U, E>{
+    public func map<U>(_ transform: @escaping (_ value: T) throws -> U,
+                       _ transformError: @escaping (Error) -> E) -> Future<U, E> {
         return Future<U, E>(operation: { completion in
             self.execute(onSuccess: { value in
                 do {
@@ -301,7 +302,7 @@ extension Future {
             })
         })
     }
-    
+
     /**
      Creates a new future by applying a function to the successful result of this future.
      And returns the result of the function as the new future.
@@ -321,7 +322,7 @@ extension Future {
             })
         })
     }
-    
+
     /**
      Creates a new future by applying a function to the successful result of this future.
      And returns the result of the function as the new future.
@@ -334,9 +335,14 @@ extension Future {
     public func flatMap<U, F: Error>(_ transform: @escaping (T) throws-> Future<U,F>, _ transformError: @escaping (Error) -> F) -> Future<U,F> {
         return Future<U,F>(operation: { completion in
             self.execute(completion: { result in
-                do {
-                    try transform(result.value!).execute(completion: completion)
-                } catch {
+                switch result {
+                case .success(let value):
+                    do {
+                        try transform(value).execute(completion: completion)
+                    } catch {
+                        completion(.failure(transformError(error)))
+                    }
+                case .failure(let error):
                     completion(.failure(transformError(error)))
                 }
             })
@@ -355,62 +361,5 @@ extension Future {
                 return (value, futureValue)
             }
         }
-    }
-}
-
-extension Future {
-    
-    @discardableResult
-    public func done(on: DispatchQueue = DispatchQueue.global(), _ onSuccess: @escaping SuccessCompletion) -> Future {
-        return Future(operation: { resolver in
-            self.execute(completion: { (result) in
-                switch result {
-                case .success(let value):
-                    on.async {
-                        onSuccess(value)
-                    }
-                case .failure:
-                    break
-                }
-                resolver(result)
-            })
-        })
-    }
-
-    @discardableResult
-    public func `catch`(on: DispatchQueue = DispatchQueue.global(), _ onFailure: @escaping FailureCompletion) -> Future {
-        return Future(operation: { resolver in
-            self.execute(completion: { (result) in
-                switch result {
-                case .success:
-                    break
-                case .failure(let failure):
-                    on.async {
-                        onFailure(failure)
-                    }
-                }
-                resolver(result)
-            })
-        })
-    }
-    
-    /**
-    Chain two depending futures providing a function that gets the erro of this future as parameter
-    and then creates new one
-    
-    - Parameters:
-    - transform: function that will generate a new `Future` by passing the value of this Future
-    - value: the value of this Future
-    
-    - Returns: New chained Future
-    */
-    public func whenFailure<F: Error>(_ transform: @escaping (_ failure: E) -> Future<T,F>) -> Future<T,F> {
-        return Future<T,F>(operation: { completion in
-            self.execute(onSuccess: { value in
-                completion(.success(value))
-            }, onFailure: { error in
-                transform(error).execute(completion: completion)
-            })
-        })
     }
 }

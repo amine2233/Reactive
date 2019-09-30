@@ -23,7 +23,7 @@ public struct ExecutionContext {
 
     /// Execution context that executes immediately and synchronously on current thread or queue.
     public static var immediate: ExecutionContext {
-        return ExecutionContext { block in block () }
+        return ExecutionContext { block in block() }
     }
 
     /// Executes immediately and synchronously if current thread is main thread. Otherwise executes

@@ -23,13 +23,14 @@ extension Observable {
         }
         let timestamp = timeout.map { DispatchTime.now() + $0 } ?? DispatchTime.distantFuture
         if group.wait(timeout: timestamp) != .success {
-            throw NSError(domain: "Timeout error", code: 0, userInfo: nil)
+            throw ObservableError.timeout
         }
         return value
     }
 
     /**
-     Creates a new observable that mirrors the original observable but is delayed by x seconds. If no queue is specified, the new observable will call it's observers and transforms on the main queue.
+     Creates a new observable that mirrors the original observable but is delayed by x seconds.
+     If no queue is specified, the new observable will call it's observers and transforms on the main queue.
      */
     public func delay(_ seconds: TimeInterval, queue: DispatchQueue = DispatchQueue.main) -> Observable<T> {
         let observable = Observable<T>()

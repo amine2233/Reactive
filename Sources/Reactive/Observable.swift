@@ -35,6 +35,8 @@ public protocol ObservableProtocol {
     associatedtype Element
 
     var value: Element? { get }
+
+    func update(_ value: Element)
 }
 
 public typealias Observer<T> = (T) -> Void
@@ -61,6 +63,11 @@ public final class Observable<T>: ObservableProtocol, Unsubscribable {
     public let options: ObservingOptions
     fileprivate let mutex = Lock()
 
+    public enum ObservableError: Error {
+        case timeout
+        case none
+    }
+
     /// Create a new observable without a value and the desired options. You can supply a value later via `update`.
     public init(options: ObservingOptions = []) {
         self.options = options
@@ -79,7 +86,7 @@ public final class Observable<T>: ObservableProtocol, Unsubscribable {
             self.value = value
         }
     }
-    
+
     /**
      Create a new observable from an observable completion,
      
@@ -97,6 +104,25 @@ public final class Observable<T>: ObservableProtocol, Unsubscribable {
     public init(options: ObservingOptions = [], observable: @escaping (Observable<T>) -> Void) {
         self.options = options
         observable(self)
+    }
+
+    /**
+     Create a new observable from an observer completion,
+     
+     ```
+     let magicNumber = Observable<String> { value in
+        print(value)
+     }
+     ```
+     - Note: See observing options for various upgrades and awesome additions.
+     
+     - Parameters:
+     - options: the desired options.
+     - observer: callback.
+    */
+    public init(options: ObservingOptions = [], observer: @escaping (T) -> Void) {
+        self.options = options
+        self.subscribe(observer)
     }
 
     /**
@@ -122,6 +148,20 @@ public final class Observable<T>: ObservableProtocol, Unsubscribable {
         return token
     }
 
+    /**
+     Subscribe an observable object `ObservableProtocol`. when change ocure the observable value will update.
+     You can use the obtained `ObserverToken` to manually unsubscribe from future updates via `unsubscribe`.
+
+    - Note: This block will be retained by the observable until it is deallocated or the corresponding `unsubscribe`
+    function is called.
+    */
+    @discardableResult
+    public func subscribe<T: ObservableProtocol>(_ observable: T) -> ObservableToken where Element == T.Element {
+        subscribe { value in
+            observable.update(value)
+        }
+    }
+
     /// Update the inner state of an observable and notify all observers about the new value.
     public func update(_ value: T) {
         mutex.lock {
@@ -139,7 +179,7 @@ public final class Observable<T>: ObservableProtocol, Unsubscribable {
 
     /// Update the inner state of an observable and notify all observers about the new value.
     @discardableResult
-    public func update(_ observer: Observable<T>) -> ObservableToken {
+    public func update(with observer: Observable<T>) -> ObservableToken {
         return observer.subscribe(update)
     }
 
@@ -231,5 +271,20 @@ extension Observable {
             }
         }
         return observable
+    }
+}
+
+extension Observable.ObservableError: Equatable {
+
+    public static func == (lhs: Observable.ObservableError, rhs: Observable.ObservableError) -> Bool {
+        switch (lhs, rhs) {
+        case (.timeout, .timeout):
+            return true
+        case (.none, .none):
+            return true
+        case (.timeout, _),
+             (.none, _):
+            return false
+        }
     }
 }
