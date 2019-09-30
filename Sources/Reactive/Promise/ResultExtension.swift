@@ -25,6 +25,14 @@ public protocol ResultProtocol {
 
 extension Result: ResultProtocol where Failure: Error {
 
+    public init(value: Success) {
+        self = .success(value)
+    }
+
+    public init(error: Failure) {
+        self = .failure(error)
+    }
+
     public var value: Success? {
         switch self {
         case let .success(value):

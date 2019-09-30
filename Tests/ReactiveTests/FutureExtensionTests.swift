@@ -8,7 +8,7 @@
 import XCTest
 @testable import Reactive
 
-class FutureExtension: XCTestCase {
+class FutureExtensionTests: XCTestCase {
 
     enum TestError: Error {
         case empty

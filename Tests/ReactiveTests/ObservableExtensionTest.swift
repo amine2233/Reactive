@@ -322,7 +322,7 @@ class ObservableExtensionTest: XCTestCase {
 
         observable1.update(.success("testValue"))
 
-        waitForExpectations(timeout: 5, handler: nil)
+        waitForExpectations(timeout: 10, handler: nil)
         XCTAssertEqual(expectationValue, expectationValue1)
         XCTAssertEqual(expectationValue, expectationValue2)
     }

@@ -185,8 +185,8 @@ public struct Future<T, E: Error> {
                     if whereFilter(value) {
                         completion(result)
                     }
-                case .failure:
-                    completion(result)
+                case .failure(let failure):
+                    completion(.failure(failure))
                 }
             })
         })
@@ -202,8 +202,8 @@ public struct Future<T, E: Error> {
         return Future(operation: { completion in
             self.execute(completion: { result in
                 switch result {
-                case .success:
-                    completion(result)
+                case .success(let value):
+                    completion(.success(value))
                 case .failure(let error):
                     if whereFilterError(error) {
                         completion(result)
@@ -288,7 +288,8 @@ extension Future {
      
      - Returns: New Future
      */
-    public func map<U>(_ transform: @escaping (_ value: T) throws -> U, _ transformError: @escaping (Error) -> E) -> Future<U, E> {
+    public func map<U>(_ transform: @escaping (_ value: T) throws -> U,
+                       _ transformError: @escaping (Error) -> E) -> Future<U, E> {
         return Future<U, E>(operation: { completion in
             self.execute(onSuccess: { value in
                 do {
@@ -334,9 +335,14 @@ extension Future {
     public func flatMap<U, F: Error>(_ transform: @escaping (T) throws-> Future<U,F>, _ transformError: @escaping (Error) -> F) -> Future<U,F> {
         return Future<U,F>(operation: { completion in
             self.execute(completion: { result in
-                do {
-                    try transform(result.value!).execute(completion: completion)
-                } catch {
+                switch result {
+                case .success(let value):
+                    do {
+                        try transform(value).execute(completion: completion)
+                    } catch {
+                        completion(.failure(transformError(error)))
+                    }
+                case .failure(let error):
                     completion(.failure(transformError(error)))
                 }
             })
