@@ -100,7 +100,7 @@ class ResultExtensionsTests: XCTestCase {
         let result = Result<Int, TestError>(error: .empty)
 
         let newResult = result.compactMap { "\($0 ?? 6)" }
-        
+
         XCTAssertFalse(newResult.isSuccess)
     }
 

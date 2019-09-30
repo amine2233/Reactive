@@ -7,6 +7,7 @@
 
 import XCTest
 @testable import Reactive
+
 class ObservableExtensionTest: XCTestCase {
 
     enum TestError: Error {
@@ -307,14 +308,14 @@ class ObservableExtensionTest: XCTestCase {
         let expectation = self.expectation(description: "Test observable 1 combine")
         var expectationValue: String?
         var expectationValue1: String?
-        var expectationValue2: String?
+        // var expectationValue2: String?
 
         _ = observable1.next { (value) in
             expectationValue1 = value
         }
-        .next { (anOther) in
-            expectationValue2 = anOther
-        }
+//        .next { (anOther) in
+//            expectationValue2 = anOther
+//        }
         .subscribe { value in
             expectationValue = value.value
             expectation.fulfill()
@@ -324,7 +325,7 @@ class ObservableExtensionTest: XCTestCase {
 
         waitForExpectations(timeout: 10, handler: nil)
         XCTAssertEqual(expectationValue, expectationValue1)
-        XCTAssertEqual(expectationValue, expectationValue2)
+        //XCTAssertEqual(expectationValue, expectationValue2)
     }
 
     func testObservableExtensionResultError() {

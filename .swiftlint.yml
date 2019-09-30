@@ -1,9 +1,14 @@
-line_length: 160
 disabled_rules: # rule identifiers to exclude from running
   - colon
   - comma
   - control_statement
   - force_cast
+
+line_length: 160
+
+type_body_length:
+  - 300 # warning
+  - 400 # error
 
 identifier_name:
   min_length: # only min_length
