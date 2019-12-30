@@ -17,7 +17,7 @@ public struct Future<T, E: Error> {
     public typealias SuccessCompletion = (T) -> Void
 
     // MARK: - Properties
-    private let operation: AsyncOperation
+    internal let operation: AsyncOperation
 
     // MARK: - Initialization
     /**
@@ -117,11 +117,14 @@ public struct Future<T, E: Error> {
      ````
      
      - Parameters:
+        - on: The DispatchQueue when we run the success or the failure operation
         - completion: the completion block of the operation. It has the `Result` of the operation as parameter.
      */
-    public func execute(completion: @escaping Completion) {
+    public func execute(on queue: DispatchQueue = DispatchQueue.global(), completion: @escaping Completion) {
         self.operation { value in
-            completion(value)
+            queue.async {
+                completion(value)
+            }
         }
     }
 
@@ -138,16 +141,21 @@ public struct Future<T, E: Error> {
          ````
      
      - Parameters:
+        - on: The DispatchQueue when we run the success or the failure operation
         - onSuccess: the success completion block of the operation. It has the value of the operation as parameter.
         - onFailure: the failure completion block of the operation. It has the error of the operation as parameter.
      */
-    public func execute(onSuccess: @escaping SuccessCompletion, onFailure: FailureCompletion? = nil) {
+    public func execute(on queue: DispatchQueue = DispatchQueue.global(), onSuccess: @escaping SuccessCompletion, onFailure: FailureCompletion? = nil) {
         self.operation { result in
             switch result {
             case .success(let value):
-                onSuccess(value)
+                queue.async {
+                    onSuccess(value)
+                }
             case .failure(let error):
-                onFailure?(error)
+                queue.async {
+                    onFailure?(error)
+                }
             }
         }
     }
